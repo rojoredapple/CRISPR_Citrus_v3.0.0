@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'gene/genes'
   get 'plant/plants'
   resources :posts
-  root 'home#index'
+  root :to => 'home#index'
   get '/search' => 'home#search', :as => 'search_page'
   
  

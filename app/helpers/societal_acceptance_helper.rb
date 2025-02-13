@@ -1,0 +1,2 @@
+module SocietalAcceptanceHelper
+end

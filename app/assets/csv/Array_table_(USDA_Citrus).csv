@@ -1,0 +1,51 @@
+Array_ID,Length,Arrived,Supplier,Batch
+YCA00008,4,01-28-21,GenScript,1
+YCA00008/39_6mer,6,01-28-21,GenScript,1_ex
+YCA00010,4,01-28-21,GenScript,1
+YCA00017,4,01-28-21,GenScript,1
+YCA00039,4,01-28-21,GenScript,1
+YCA00042,4,01-28-21,GenScript,1
+YCA00050,4,01-28-21,GenScript,1
+YCA00066,4,01-28-21,GenScript,1
+YCA00066/39,4,01-28-21,GenScript,1_ex
+YCA00067,4,01-28-21,GenScript,1
+YCA00004,4,01-29-21,Gene Universal,1
+YCA00013,4,01-29-21,Gene Universal,1
+YCA00014,4,01-29-21,Gene Universal,1
+YCA00016,4,01-29-21,Gene Universal,1
+YCA00033,4,01-29-21,Gene Universal,1
+YCA00049,4,01-29-21,Gene Universal,1
+YCA00064,4,01-29-21,Gene Universal,1
+YCA00051,4,02-05-21,Gene Universal,1
+YCA00065,4,02-05-21,Gene Universal,1
+YCA00008/10_8mer,8,02-05-21,GenScript,1_ex
+YCA00018,4,02-05-21,GenScript,1
+YCA00020sw/66_6mer,6,02-05-21,GenScript,1_ex
+YCA00054,4,02-05-21,GenScript,1
+YCA00008/10/39_10mer,10,02-09-21,GenScript,1_ex
+YCA00041,4,02-16-21,Gene Universal,1
+YCA00002,4,03-15-21,Gene Universal,2
+YCA00003,4,03-15-21,Gene Universal,2
+YCA00005,4,03-15-21,Gene Universal,2
+YCA00006,4,03-15-21,Gene Universal,2
+YCA00017,4,03-15-21,Gene Universal,2
+YCA00020,4,03-15-21,Gene Universal,2
+YCA00023,4,03-16-21,Gene Universal,2
+YCA00027,4,03-15-21,Gene Universal,2
+YCA00028,4,03-15-21,Gene Universal,2
+YCA00029,4,03-15-21,Gene Universal,2
+YCA00031,4,03-15-21,Gene Universal,2
+YCA00034,4,03-15-21,Gene Universal,2
+YCA00038,4,03-15-21,Gene Universal,2
+YCA00046,4,03-16-21,Gene Universal,2
+YCA00047,4,03-28-21,Gene Universal,2
+YCA00048,4,03-19-21,Gene Universal,2
+YCA00052,4,03-16-21,Gene Universal,2
+YCA00053,4,03-16-21,Gene Universal,2
+YCA00055,4,03-16-21,Gene Universal,2
+YCA00058,4,03-15-21,Gene Universal,2
+YCA00059,4,03-16-21,Gene Universal,2
+YCA00060,4,03-16-21,Gene Universal,2
+YCA00061,4,03-16-21,Gene Universal,2
+YCA00062,4,03-16-21,Gene Universal,2
+YCA00063,4,03-16-21,Gene Universal,2

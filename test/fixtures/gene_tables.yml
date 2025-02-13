@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Gene_ID: MyString
+  Description: MyString
+  Chromosome: MyString
+  Location: MyString
+  Orthogroup: MyString
+  Link: MyString
+  HZAU_link: MyString
+  Sequence_link: MyString
+  Diagram_link: MyString
+  Live: MyString
+
+two:
+  Gene_ID: MyString
+  Description: MyString
+  Chromosome: MyString
+  Location: MyString
+  Orthogroup: MyString
+  Link: MyString
+  HZAU_link: MyString
+  Sequence_link: MyString
+  Diagram_link: MyString
+  Live: MyString

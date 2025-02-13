@@ -1,0 +1,86 @@
+<main class="main" id="top">
+      <div class="container-fluid" data-layout="container">
+    <%# NAVBAR %>
+    <%= render 'shared/infonavbar'%>
+    
+        <div class="content">
+          <div class="card">
+            <div class="card-body overflow-hidden p-lg-6">
+              <div class="row align-items-center justify-content-between">
+                <h3>The sgRNAs designed to edit genes in the population</h3>
+              </div>
+              <div>
+                <p class="lead">Additional information</p>
+
+                <table class="crisprtable table table-sm table-dashboard data-table no-wrap mb-0 w-100">
+                  <thead class="bg-table fs--0">
+                    <tr>
+                      <th class="sort">sgRNA ID</th>
+                      <th class="sort">Sequence</th>
+                      <th class="sort">tRNA position #</th>
+                      <th style="width: 25%">Vector</th>
+                      <th class="sort">Genes targeted</th>
+                      <th class="sort">Plants transformed</th>
+                      <!-- <th class="sort">Orthologs in other genomes</th>-->
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white fs--1">
+                    <% @guide_tables.each do |guide_table| %>
+                      <tr>
+                        <td><%= guide_table.sgRNA_ID%></td>
+                        <td><%= guide_table.Sequence%></td>
+                        <td>X</td>
+                        <td>XXXXXX</td>
+                        <td><% @genotyping_tables.each do |genotyping_table| %>
+                        <%if guide_table.sgRNA_ID == genotyping_table.sgRNA_ID%>
+                          <% @gene_tables.each do |gene_table| %>
+                            <%if genotyping_table.Gene_ID == gene_table.Gene_ID %>
+                              <%= link_to gene_table.Gene_ID, gene_table%>
+                            <%end%>
+                          <%end%>
+                        <%end%>
+                      <%end%>
+                      </td>
+                      <td>
+                        <% @genotyping_tables.each do |genotyping_table| %>
+                          <%if guide_table.sgRNA_ID == genotyping_table.sgRNA_ID%>
+                            <% @plant_tables.each do |plant_table| %>
+                              <%if genotyping_table.Plant_ID == plant_table.Plant_ID %>
+                                <%= link_to plant_table.Plant_ID, plant_table%>
+                              <%end%>
+                            <%end%>
+                          <%end%>
+                        <%end%>
+                      </td>
+                      <!--<td></td>-->
+                      </tr>                    
+                    <%end%>
+                  </tbody>
+                  <tfoot class="bg-table">
+                    <tr>
+                      <th class="sort">sgRNA ID</th>
+                      <th class="sort">Sequence</th>
+                      <th class="sort">tRNA position #</th>
+                      <th class="sort">Vector</th>
+                      <th class="sort">Genes targeted</th>
+                      <th class="sort">Plants transformed</th>
+                      <!-- <th class="sort">Orthologs in other genomes</th> -->
+                    </tr>
+                  </tfoot>
+                </table>
+
+
+              </div>
+            </div>
+          </div>
+    </main>
+ 
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.24/r-2.2.7/datatables.min.js"></script>
+
+  <script type="text/javascript">
+    setTimeout(function(){
+      $('.crisprtable').DataTable({
+      responsive: true 
+    });
+      }, 500);
+  </script>

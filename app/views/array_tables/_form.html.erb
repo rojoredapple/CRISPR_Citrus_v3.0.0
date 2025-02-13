@@ -1,0 +1,42 @@
+<%= form_with(model: array_table) do |form| %>
+  <% if array_table.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(array_table.errors.count, "error") %> prohibited this array_table from being saved:</h2>
+
+      <ul>
+        <% array_table.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Array_ID %>
+    <%= form.text_field :Array_ID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Length %>
+    <%= form.text_field :Length %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Arrived %>
+    <%= form.text_field :Arrived %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Supplier %>
+    <%= form.text_field :Supplier %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Batch %>
+    <%= form.text_field :Batch %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

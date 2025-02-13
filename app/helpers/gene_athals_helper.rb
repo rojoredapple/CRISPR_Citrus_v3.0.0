@@ -1,0 +1,2 @@
+module GeneAthalsHelper
+end

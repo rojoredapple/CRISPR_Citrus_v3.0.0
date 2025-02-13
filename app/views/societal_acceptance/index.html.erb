@@ -1,0 +1,83 @@
+<main class="main" id="top">
+  <div class="container-fluid" data-layout="container">
+  <%# NAVBAR %>
+    <%= render 'shared/infonavbar'%>
+
+  <div class="content">
+      <br>
+      <div class="card">
+          <div class="card-body overflow-hidden p-lg-6">
+                  <div class="row align-items-center justify-content-between">
+                  <% if params[:info]%>
+                      <% if params[:info] == "acceptance"%>
+                          <h3>Societal Acceptance</h3>
+                          <!-- SA  v3 -->
+                      <%end%>
+                  <%else%>
+                          <h3>No information found</h3>
+                  <%end%>
+                  </div>
+                  <div>
+                      <% if params[:info]%>
+
+                          <!--Societal Acceptance-->
+                          <% if params[:info] == "acceptance"%>
+                          <p class="lead">
+                          Consumers have consistently displayed resistance towards biotechnology/genetic engineering in food, and this has limited the market success of genetically modified (GM) products. This aversion is largely driven by safety concerns related to the transgenic (transfer of DNA from one plant to another) nature of GM. Since CRISPR gene editing doesn’t necessarily involve the introduction of foreign DNA, there are hopes that consumers will perceive gene edited foods more favorably once they receive education about this difference between the technologies. Thus, multiple studies have investigated consumers’ preferences for CRISPR foods compared to its GM and conventional counterparts. Although most of their results show that consumers still prefer conventional breeding methods to both GM and CRISPR, these studies also observed that consumers display higher acceptance towards CRISPR than GM. This suggests that there is a potential for boosts in consumer acceptance of CRISPR. Therefore, we decided to explore factors that could influence consumers’ willingness-to-pay (WTP) for gene edited (GE) foods.
+                          </p>
+                          <p class="lead">
+                          To achieve our objectives, we conducted 2 nationwide online surveys to examine 1) behavioral and psychological drivers of preference for GE, and 2) the effectiveness of message framing tools in boosting acceptance of GE.
+                          </p>
+                          <h3>Results</h3>
+                          <ul class="lead">
+                              <li>Consumers prefer CRISPR to GM</li>
+                              <li>This suggests that consumers can differentiate between the two technologies, and possibly perceive CRISPR as more “natural” than GM, thus implying that CRISPR has the potential to perform better commercially than GM.</li>
+                              <li>CRISPR acceptance is higher among people with specific behavioral traits such as risk-loving, low risk perception of CRISPR, familiarity with CRISPR benefits.</li>
+                          </ul>
+                          <br>
+                          <div style="text-align: center; width: 100%">
+                              <%= image_tag "societal_acceptance/SocietalAcceptance1.png", style:"width:400px" %>
+                          </div>
+                          <br>
+                          <ul class="lead">
+                              <li>Distinct segments of OJ consumers exist, and the extent of CRISPR acceptance differs between these consumer segments.</li>
+                              <li>The price-insensitive shoppers (OJ consumers that do not care about increases in price) are the most accepting of CRISPR.</li>
+                              <ul>
+                                  <li>These shoppers tend to be young, have high household income, pay attention to OJ health benefits, like to take risks, and are familiar with CRISPR.</li>
+                              </ul>
+                              <li>The class with the least acceptance of CRISPR is the habitual OJ purchasers.</li>
+                          </ul>
+                          <br>
+                          <div style="text-align: center; width: 100%">
+                              <%= image_tag "societal_acceptance/SocietalAcceptance2.png", style:"width:400px" %>
+                          </div>
+                          <br>
+                          <ul class="lead">
+                              <li>Group definitions –</li>
+                              <ul>
+                                  <li>Control group received no information.</li>
+                                  <li>Negative group received information about the disadvantages of not using CRISPR in food production.</li>
+                                  <li>Positive group received information about the advantages of using CRISPR in food production.</li>
+                              </ul>
+                              <li>Consumers in both the positive and negative groups were willing to pay more for CRISPR (compared to those in the control group) after receiving information.</li>
+                              <li>The positively framed information has a stronger effect on consumers’ willingness-to-pay than the negatively framed information.</li>
+                          </ul>
+                          <br>
+                          <div style="text-align: center; width: 100%">
+                              <%= image_tag "societal_acceptance/SocietalAcceptance3.png", style:"width:400px" %>
+                          </div>
+                          <br>
+                          <p class="lead">
+                          In conclusion, the insights from these studies can provide guidance to biotechnology stakeholders as they design awareness campaigns to educate consumers about the benefits of CRISPR. For example, the difference between GM and CRISPR should be made explicit and easy for consumers to understand. Also, educational campaigns should be tailored to different consumer groups, instead of using a blanket approach. Finally, the wording of any communication strategies should be positively framed to improve their effectiveness.
+                          </p>
+                          <%end%>
+
+                      <% else %>
+                          <p>Did you click an item from the navigation bar?</p>
+                      <%end%>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</main>

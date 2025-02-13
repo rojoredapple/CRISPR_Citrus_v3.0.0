@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Vector_ID: MyString
+  sgRNA_ID: MyString
+  Position: MyString
+
+two:
+  Vector_ID: MyString
+  sgRNA_ID: MyString
+  Position: MyString

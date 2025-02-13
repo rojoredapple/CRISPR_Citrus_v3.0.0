@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CRISPR Citrus</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%= content_for?(:title) ? yield(:title) : "CRISPR Citrus Lab" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "CRISPR Citrus Lab" %>">
+    <meta name="turbolinks-cache-control" content="no-cache">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+   
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <!-- javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' -->
+
+
+    <%# FONTS %>
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:100,200,300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">  
+  
+    <%# ICONS %>
+    <%= favicon_link_tag asset_path('favicons/logo.svg'), :rel => 'icon', :type =>  'image/png' %>
+  </head>
+
+  <body>
+    <header>
+      
+    </header>
+
+    <main role="main">
+    <%= content_for?(:content) ? yield(:content) : yield %>
+    </main>
+  </body>
+
+
+</html>
+
+
+
+
+  <%# HEROKU: APPLICATION ERROR, APP FAILED ON START | FIX %>
+  <%# heroku ps:scale web=0 / 1 | when heroku app crashes %>
+  
+
+
+
+  <%# ICONS & Manifest - Saved them in case the code is needed
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="shortcut icon" type="image/x-icon" href="favicons/favicon.ico">
+  <meta name="msapplication-TileImage" content="favicons/mstile-150x150.png">
+  <meta name="theme-color" content="#ffffff"> 
+  <link rel="manifest" href="favicons/manifest.json">
+  %>

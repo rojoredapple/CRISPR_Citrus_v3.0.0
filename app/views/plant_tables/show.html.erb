@@ -1,0 +1,335 @@
+<main class="main" id="top">
+  <div class="container-fluid" data-layout="container">
+
+<!-------------------NAVBAR--------------------->
+<%= render 'shared/infonavbar'%>
+
+<div class="content">
+
+<div class="row no-gutters">
+  <div class="col-lg-6 pr-lg-2 mb-3">
+    <div class="card h-md-100">
+      <div class="card-body">
+    <!-------------------PLANT ID--------------------->
+        <div class="d-flex flex-between-center mb-1 mt-2">
+          <div class="d-flex align-items-center">
+            <span class="h2 font-weight-semi-bold">
+            Plant ID
+            </span>
+            <span class="h2 font-weight-semi-bold">
+              <%= ":" %>
+              <%= @plant_table.Plant_ID %>
+            </span>
+          </div>
+        </div>
+    <!-------------------VECTOR ID--------------------->
+        <div class="d-flex flex-between-center mb-1">
+          <div class="d-flex align-items-center">
+            <span class="h2 font-weight-semi-bold">
+            Vector
+            </span>
+
+            <span class="h2 font-weight-semi-bold">
+            <%= ":" %>
+            <%= @plant_table.Vector %>
+            </span>
+          </div>
+        </div>
+
+    <!-------------------SPECIES--------------------->
+        <div class="d-flex flex-between-center mb-1">
+          <div class="d-flex align-items-center">
+            <span class="h4 font-weight-semi-bold">
+            Species:
+            </span>
+            <span class="h4 font-italic ml-2">
+            <%= @plant_table.Species %> 
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-------------------COLLABORATE BUTTON--------------------->
+  <div class="col-lg-6 pr-lg-2 mb-3 d-flex flex-center">
+  <%= link_to "Collaborate", contact_form_path(plantid: @plant_table.Plant_ID), class: "btn btn-show btn-outline-citrus border-2x align-self-center p-4 px-6"%>
+  </div>
+</div>
+
+<!-------------------GENOTYPING SUMMARY--------------------->
+<div class="row no-gutters">
+  <div class="col-lg-6 pr-lg-2 mb-3">
+    <div class="card h-md-100">
+      <div class="col-auto mt-2">
+        <h5 class="mb-0 text-center">Genotyping summary</h5>
+      </div>
+
+    <%# Convert string route "example_plant_graph1.png" into image%>
+    <% genotype = @plant_table.Genotyping_summary%>
+    <%= image_tag"plant/" +  genotype, alt: "" rescue image_tag "plant/example_plant_graph_rescue.png"%>
+  </div>
+</div>
+
+      
+  <div class="col-lg-6 mb-3 pl-xxl-2">
+    <div class="card h-md-100">
+      <div class="col-auto mt-2">
+        <h5 class="mb-0 text-center">Genotyping results</h5>
+      </div>
+      <br/>
+      <!--GENOTYPING RESULTS - CAROUSEL------->
+      <div class="owl-carousel owl-theme owl-theme-dark">
+        <%= image_tag "tmp/test_genotyping.png", alt:"", width:""%> 
+        <%= image_tag "tmp/test_genotyping.png", alt:"", width:""%> 
+      </div>
+      <br>            
+    </div>
+  </div>
+</div>
+
+<!---ALL PROJECTS START--->
+<div class="row no-gutters">
+  <div class="col-lg-12 mb-3">
+    <div class="card h-lg-100 overflow-hidden">
+      <div class="card-header bg-light">
+        <div class="row align-items-center">
+          <div class="col">
+            <h6 class="mb-0">Gene</h6>
+          </div>
+          <div class="col">
+            <h6 class="mb-0">Orthogroup</h6>
+          </div>
+          <div class="col">
+            <h6 class="mb-0">Description</h6>
+          </div>
+          <div class="col">
+            <h6 class="mb-0">Editing efficiency</h6>
+          </div>
+          <div class="col">
+            <h6 class="mb-0">sgRNA</h6>
+          </div>
+        </div>
+      </div>
+
+    <div class="card-body p-0">
+      <div class="row no-gutters align-items-center py-2 position-relative border-bottom border-200">
+        <div class="col pl-card py-1 position-static">
+          <div class="media align-items-center">
+            <div class="avatar avatar-xl mr-3">
+              <div class="avatar-name rounded-circle bg-soft-primary text-dark"><span class="fs-0 text-primary">F</span></div>
+            </div>
+            <div class="media-body">
+              <h6 class="mb-0 d-flex align-items-center"><a class="text-800 stretched-link" href="#!">Falcon</a><span class="badge badge-pill ml-2 bg-200 text-primary">38%</span></h6>
+            </div>
+          </div>
+        </div>
+        <div class="col py-1">
+          
+        </div>
+      </div>
+      <div class="row no-gutters align-items-center py-2 position-relative border-bottom border-200">
+        <div class="col pl-card py-1 position-static">
+          <div class="media align-items-center">
+            <div class="avatar avatar-xl mr-3">
+              <div class="avatar-name rounded-circle bg-soft-success text-dark"><span class="fs-0 text-success">R</span></div>
+            </div>
+            <div class="media-body">
+              <h6 class="mb-0 d-flex align-items-center"><a class="text-800 stretched-link" href="#!">Reign</a><span class="badge badge-pill ml-2 bg-200 text-primary">79%</span></h6>
+            </div>
+          </div>
+        </div>
+        <div class="col py-1">
+          
+        </div>
+      </div>
+      <div class="row no-gutters align-items-center py-2 position-relative border-bottom border-200">
+        <div class="col pl-card py-1 position-static">
+          <div class="media align-items-center">
+            <div class="avatar avatar-xl mr-3">
+              <div class="avatar-name rounded-circle bg-soft-info text-dark"><span class="fs-0 text-info">B</span></div>
+            </div>
+            <div class="media-body">
+              <h6 class="mb-0 d-flex align-items-center"><a class="text-800 stretched-link" href="#!">Boots4</a><span class="badge badge-pill ml-2 bg-200 text-primary">90%</span></h6>
+            </div>
+          </div>
+        </div>
+        <div class="col py-1">
+          
+        </div>
+      </div>
+      <div class="row no-gutters align-items-center py-2 position-relative border-bottom border-200">
+        <div class="col pl-card py-1 position-static">
+          <div class="media align-items-center">
+            <div class="avatar avatar-xl mr-3">
+              <div class="avatar-name rounded-circle bg-soft-warning text-dark"><span class="fs-0 text-warning">R</span></div>
+            </div>
+            <div class="media-body">
+              <h6 class="mb-0 d-flex align-items-center"><a class="text-800 stretched-link" href="#!">Raven</a><span class="badge badge-pill ml-2 bg-200 text-primary">40%</span></h6>
+            </div>
+          </div>
+        </div>
+        <div class="col py-1">
+          
+        </div>
+      </div>
+      <div class="row no-gutters align-items-center py-2 position-relative">
+        <div class="col pl-card py-1 position-static">
+          <div class="media align-items-center">
+            <div class="avatar avatar-xl mr-3">
+              <div class="avatar-name rounded-circle bg-soft-danger text-dark"><span class="fs-0 text-danger">S</span></div>
+            </div>
+            <div class="media-body">
+              <h6 class="mb-0 d-flex align-items-center"><a class="text-800 stretched-link" href="#!">Slick</a><span class="badge badge-pill ml-2 bg-200 text-primary">70%</span></h6>
+            </div>
+          </div>
+        </div>
+        <div class="col py-1">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-------------------ALL PROJECTS END--------------------->
+
+<!-------------------PHENOTYPING INFO--------------------->
+<div class="row no-gutters">
+  <div class="col-lg-6 pr-lg-2 mb-3">
+    <div class="card h-md-100">
+      <div class="col-auto mt-2">
+        <h6 class="mb-3 text-800 text-center">Phenotyping Infomation (photos, etc)</h6>
+      </div>
+
+    <%# Convert string route "example_plant_graph1.png" into image%>
+    <% phenotype = @plant_table.Phenotyping_image%>
+    <%= image_tag "plant/" + phenotype, alt: "" rescue image_tag "plant/example_pheno_graph1.png"%> 
+    <p class="pt-1 pl-1"><%=@plant_table.Phenotyping_text%> </p>    
+  </div>
+</div>
+
+      
+  <div class="col-lg-6 mb-3 pl-xxl-2">
+    <div class="card h-md-100">
+      <div class="col-auto mt-2">
+        <h5 class="mb-0 text-center">Notes on plant:</h5>
+      </div>
+      <div class="card-body position-relative maxheightsize">
+          <p>
+            <%@plant_notes.each do |plant_note|%>
+              <%if @plant_table.Plant_ID == plant_note.Plant_ID%>
+                <%=plant_note.Note%>
+              <%end%>
+            <%end%>
+          </p> 
+      </div>      
+    </div>
+  </div>
+</div>
+
+  <!---  SIBLING PLANTS -->
+  <div>
+    <div class="card h-lg-100">
+      <table class="table table-sm table-dashboard data-table no-wrap mb-0 fs--1 w-100">
+        <div class="card-header bg-light d-flex flex-row">
+              <h6 class="h5">Sibling plants</h6>
+            <button type="button" class="align-left question-button mt-1 ml-2" id="sibling" style="max-width: 4vh">?</button>
+        </div>
+
+          <thead class="card-body pb-0">
+            <tr>
+              <th class="sort">Plant ID</th>
+              <th class="sort">Species</th>
+              <th class="sort">Gene ID</th>
+            </tr>
+          </thead>
+
+      <%# @result_gene_id | FUNCTION TO GET GENE ID%>
+      <% @genotyping_tables.each do |genotyping_table| %>
+        <% if @plant_table.Plant_ID == genotyping_table.Plant_ID%>
+          <% @result_gene_id = genotyping_table.Gene_ID%>
+        <% end %>
+      <% end %>
+
+      <tbody class="bg-white">
+        <%# FUNCTION TO RENDER PLANTS WITH GENE ID @result_gene_id%>
+        <% @genotyping_tables.each do |genotyping_table| %>
+          <% @plant_tables.each do |plant_table| %>
+            <% if genotyping_table.Gene_ID == @result_gene_id%>
+              <% if genotyping_table.Plant_ID == plant_table.Plant_ID%>
+                <tr>
+                    <td class="media hover-actions-trigger align-items-center p-3 pb-1">
+                      <div class="file-thumbnail">
+                        <%= image_tag "logos/logo.svg", alt:"", class:"filter-logo h-100 w-100 fit-cover rounded-soft"%>
+                      </div>
+                      <div class="media-body ml-3">
+                        <%= link_to plant_table.Plant_ID, plant_table, class:"h6 mb-1 font-weight-semi-bold"%>
+                      </div>
+                    </td>
+                    <td class="align-middle font-weight-semi-bold"><%=plant_table.Species%></td>
+
+                    <td class="align-middle font-weight-semi-bold">
+                    <%# FUNCTION TO LINK TO GENE ID%>
+                    <% @gene_tables.each do |gene_table| %>
+                      <% if gene_table.Gene_ID == @result_gene_id %>
+                        <%= link_to gene_table.Gene_ID, gene_table, class:"h6 mb-1 font-weight-semi-bold"%>
+                      <% end %>
+                    <% end %>
+                    </td>
+
+                    <%# QUESTION MARK BUTTON %>
+                    <td style="vertical-align: middle">
+                    <!--
+                    <%# FILE INFO BUTTON %>
+                      <% file = image_tag "icons/doc.svg", alt:"", width:"10rem" %>
+                      <button type="button" class="text-file-button ml-2" > <%= link_to file, "/txt/" + plant_table.Plant_ID + ".txt", download: "Plant " + plant_table.Plant_ID %></button> 
+                    -->
+                    
+                        <!-- OLD SCRIPT FOR CONTENT & HOVER FOR INFO. NOW USED IN GENES
+                              <%# CONTENT %>
+                              <% @content =  plant_table.Species %>
+                              <%# SCRIPT TO LOAD CONTENT %>
+                      <script>
+                        document.addEventListener("turbolinks:load", function(){
+                          tippy('#<%= plant_table.Plant_ID%>', {
+                          content: "<%=@content%>",
+                          placement: 'left-start',
+                          animation: 'fade',
+                          hideOnClick: true,
+                          theme: 'light-border',
+                        });
+                      });
+                      </script>
+                      -->
+                    </td>
+                </tr>
+              <% end %> 
+            <% end %> 
+          <% end %> 
+        <% end %> 
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+  <!-- SIBLING PLANTS HOVER --->
+  <script>
+    document.addEventListener("turbolinks:load", function(){
+      tippy('#sibling', {
+      content: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae. Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. However, all current definitions of Plantae exclude the fungi and some algae, as well as the prokaryotes (the archaea and bacteria). By one definition, plants form the clade Viridiplantae (Latin name for \"green plants\"), a group that includes the flowering plants, conifers and other gymnosperms, ferns and their allies, hornworts, liverworts, mosses, and the green algae, but excludes the red and brown algae.",
+      placement: 'left-start',
+      animation: 'fade',
+      hideOnClick: true,
+      theme: 'light-border',
+    });
+  });
+  </script>
+</main>
+
+
+<%#=plant_table.extra_field%> 
+<%#=plant_table.additional_field%> 

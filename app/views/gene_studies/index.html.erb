@@ -1,0 +1,32 @@
+<!--
+
+<h1>Gene Studies</h1>
+
+<table>
+<p id="notice"><%= notice %></p>
+  <thead>
+    <tr>
+      <th>Gene id</th>
+      <th>Study</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gene_studies.each do |gene_study| %>
+      <tr>
+        <td><%= gene_study.Gene_ID %></td>
+        <td><%= gene_study.Study %></td>
+        <td><%= link_to 'Show', gene_study %></td>
+        <td><%= link_to 'Edit', edit_gene_study_path(gene_study) %></td>
+        <td><%= link_to 'Destroy', gene_study, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gene Study', new_gene_study_path %>
+
+-->

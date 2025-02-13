@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Array id:</strong>
+  <%= @array_position.Array_ID %>
+</p>
+
+<p>
+  <strong>Sgrna id:</strong>
+  <%= @array_position.sgRNA_ID %>
+</p>
+
+<p>
+  <strong>Trna position:</strong>
+  <%= @array_position.tRNA_position %>
+</p>
+
+<%= link_to 'Edit', edit_array_position_path(@array_position) %> |
+<%= link_to 'Back', array_positions_path %>

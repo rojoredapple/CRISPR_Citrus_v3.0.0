@@ -1,0 +1,175 @@
+<main class="main" id="top">
+  <div class="container-fluid" data-layout="container">
+  <%# NAVBAR %>
+    <%= render 'shared/infonavbar'%>
+
+  <div class="content">
+      <br>
+      <div class="card">
+          <div class="card-body overflow-hidden p-lg-6">
+                  <div class="row align-items-center justify-content-between">
+                  <% if params[:info]%>
+                      <% if params[:info] == "hlb"%>
+                          <h3>Citrus and HLB</h3>
+                      <% elsif params[:info] == "target-genes"%>
+                          <h3>Selection of Target Genes</h3>
+                      <% elsif params[:info] == "gene-editing"%>
+                          <h3>CRISPR/Cas9 Gene Editing</h3>
+                      <% elsif params[:info] == "vectors"%>
+                          <h3>Vectors</h3>
+                      <% elsif params[:info] == "transgenic-plants"%>
+                          <h3>Creation of transgenic plants</h3>
+                      <%end%>
+                  <%else%>
+                          <h3>No information found</h3>
+                  <%end%>
+                  </div>
+                  <div>
+                      <% if params[:info]%>
+
+                          <!--HLB-->
+                          <% if params[:info] == "hlb"%>
+                              <p class="lead">
+                              THIS IS A TEST TO SEE IF GEOFFREY CAN USE CAPASTRAMO - THIS IS TEST NUMBER 2 - This is TEST NUMBER 3 - THIS IS TEST NUMBER 4
+                              Huanglongbing (HLB), also known as citrus greening, or yellow dragon disease, is one of the most serious diseases of citrus and citrus relatives. It is a bacterial disease that is transmitted through the vascular system of the plant, resulting in poor fruit quality, low yield, mottled leaves, and poor shoot health, resulting in plant decline and eventual death.
+                              </p>
+                              <p class="lead">
+                              HLB is caused by several strains of bacteria called Liberibacters that are transmitted by different species of citrus psyllid insects. HLB is a global threat, and is widespread in Asia, Africa and the Americas. In the United States, the most prevalent form of HLB is caused by the bacteria <em>Candidatus Liberibacter asiaticus</em> and is transmitted by the citrus psyllid <em>Diaphorina citri</em>. The disease can also be transmitted via grafting of an infected plant to a previously healthy plant. Since grafting is common in the citrus industry, this type of transmission is also a concern. Most citrus species, hybrids, and cultivars are susceptible to HLB. There is no cure as of yet for this catastrophic disease.
+                              </p>
+                              <p class="lead">
+                              HLB was first detected in the United States in Florida, in 2005.  Now, in 2023, orange production in Florida has dropped by 90% (<a href=https://www.fb.org/market-intel/u-s-citrus-production-an-uphill-battle-to-survive>The American Farm Bureau Federation</a>).  HLB has moved westward across the US, with the disease found in southern California in 2008. The effects of HLB on US citrus production has resulted in a switch from a positive trade balance, with the US being a global exporter of citrus, to a negative, with more citrus imported into the US than exported.
+                              </p>
+                              <p class="lead">
+                              The devastating effects of HLB on the citrus industry have impacted the economies of Florida and other citrus-growing states. As infected psyllids can migrate to infect new trees, eradication via vector control, chemical treatments, antibiotic use, or tree removal are limited in their effectiveness. Development of resistant citrus cultivars remains the best chance of ensuring a healthy citrus crop in the future.
+                              </p>
+                              <p class="lead">
+                              Also see: <a href=https://www.nifa.usda.gov/sites/default/files/resource/Citrus_Greening_Huanglongbing_HLB_%20Fact_Sheet_Rev1.pdf>USDA HLB Fact Sheet</a>
+                              </p>
+                              <%= image_tag "info/transformation3.png", style: "width:800px" %>
+
+                          <!--TARGET GENES-->
+                          <% elsif params[:info] == "target-genes"%>
+                              <h3>Strategy</h3>
+                              <p class="lead">
+                              The overall goal of this project is to identify genes which make citrus trees susceptible to diseases like HLB. By disrupting such genes, we can test whether the disruption causes citrus trees to become more resistant to disease. To do this we are creating a population of citrus trees with disrupted genes using CRISPR/Cas9 technology. Since we do not know what genes these might be, the best strategy would be to mutate as many genes as possible to test as many genes as possible.
+                              Unfortunately, this strategy is not practical for citrus species which grow into large trees and for which genetic transformation is laborious and slow. We are constrained by the number of plants we can realistically generate, maintain and test. Additionally, some genes are essential for the growth of the plant and if we disrupt them the plant will not survive.
+                              </p>
+                              <p class="lead">
+                              There are some strategies we can do to maximize the genes we can target for disruption. These include targeting multiple genes at once in a single plant. We are currently usinggRNA to target at least four genes in each vector we create. Nevertheless, we can’t target everything. While we could pick genes completely at random, we have instead decided to use existing published research into HLB to narrow the list of genes we have to choose from. We believe that this should increase our chances of identifying genes which make citrus susceptible to HLB. We also need to consider gene redundancy. Similar genes may have overlapping functions, thus the two (or more) genes may need to be disrupted at the same time for any effect on the plant to be seen.
+                              </p>
+                              <h3>Meta-analysis</h3>
+                              <p class="lead">
+                              To identify genes to target for disruption,  we conducted a meta-analysis of published HLB research in the summer of 2020. This involved collecting information from 71 datasets drawn from 28 publications. Usually these publications describe experiments which compared citrus trees with and without HLB and looked for changes in the abundance of either RNA or proteins. These datasets were very diverse in that they included different citrus species, sampled different tissues, and at different times  (e.g. time after contracting HLB). They also used different technologies and methods of analysis. We reasoned that utilizing as many datasets as possible would be the most sensible approach and that genes (or their encoded proteins) identified as found to be affected most frequently among different datasets are the best candidates.
+                              </p>
+                              <p class="lead">
+                              To compare these diverse datasets we used an approach called phylogenetic orthology inference which groups genes from different species into “orthogroups”. This created a common reference to compare datasets. Through this analysis, we found that 43% of the genes were only identified in one dataset suggesting that they are either specific to the variety of citrus, or the experimental conditions in that one study or that they are systematic noise. In any of these cases, they are not likely good candidates for encoding susceptibility to HLB in citrus. Thus this method quickly started to be useful to prioritize potential gene targets.
+                              </p>
+                              <br>
+                              <div style="text-align: center; width: 100%">
+                                  <%= image_tag "info/overlapFigures.png", style: "width:1000px" %>
+                              </div>
+                              <br>
+                              <p class="lead">
+                              We found that among the 71 datasets just 25 genes were represented in 25 or more datasets, but over 1000 genes were represented in 10 or more datasets.
+                              </p>
+                              <p class="lead">
+                              To decide on what degree of overlap was worth investigating we created random datasets of the same size and asked what level of overlap we would expect to see by chance. Notably, we never saw genes in the random datasets occur in greater than 11 datasets. We thus feel confident that the genes which overlap to a greater degree in multiple datasets are good choices to target.
+                              </p>
+                              <p class="lead">
+                              In addition, there are a few genes which have been proposed to be important for HLB susceptibility for biologically plausible reasons, for instance genes known to act to produce the phloem, the part of the plant the bacteria infects.. If these genes were not already present we also included them in our list.
+                              </p>
+                              <p class="lead">
+                              In the years since this analysis was first done additional studies have continued to be conducted and published which are informative. Thus, in future rounds of gRNA design we will update our analysis to include these new lists.
+                              </p>
+                              <h3>gRNA design</h3>
+                              <p class="lead">
+                              The main constraint in designing gRNAs is that it must have a gRNA length appropriate for the CRISPR/Cas9 system being used and the target be located next to a compatible PAM (Protospacer Adjacent Motif). In our case, we are using the CRISPR/Cas9 system derived from the bacteria Streptococcus pyogenes, so the spacer needs to be 20bp long and the target next to a NGG PAM motif. There is also a practical constraint in that we also require our gRNA not to contain the restriction sites we utilize in constructing our binary vectors.
+                              </p>
+                              <p class="lead">
+                              There are currently no empirical rules for designing efficient gRNA sequences. However, we conventionally try to select sequences which have 40-65% GC bases and with high complexity (min. repeats and 4-mer homopolymers). We also select gRNAs which retain the secondary hairpin structures of the gRNA scaffold which are required for forming a complex with Cas9, and subsequent binding to the target DNA.
+                              </p>
+                              <p class="lead">
+                              When designing gRNA at a large scale we try to select the minimum number of gRNA required to target an orthogroup. If one gRNA targets multiple similar genes, it is a good candidate. However if it targets elsewhere in the genome, it is avoided. Lastly, we would like our induced mutations to be as disruptive as possible, so we prioritize gRNA as close to the beginning of the gene to be more confident that an edited gene is knocked out.
+                              </p>
+                              <h3>tRNA array assembly</h3>
+                              <p class="lead">
+                              Once we have designed our gRNA they are then grouped into groups of four. This is done on the basis of the orthogroups we defined so that similar genes are targeted in the same plant. The groups are then placed in a sequence with each gRNA separated by a tRNA molecule to make what we refer to as a tRNA array. These tRNA sequences are RNA sequences which naturally get cleaved inside the cell. This system allows us to express our tRNA array from a single promoter, the resulting transcript is then processed to give us four distinct gRNA.
+                              </p>
+                          <!--GENE EDITING-->
+                          <% elsif params[:info] == "gene-editing"%>
+                              <p class="lead">
+                              CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats) is a gene-editing technology that allows researchers to make precise genetic modifications to the DNA of plants and animals. CRISPR works like a guided molecular scissor that can cut DNA at a defined location in the genome (i.e., the complete DNA of an organism), which can result in a genetic change (Fig. 1a). Therefore, this allows researchers to precisely modify a gene of interest, which may therefore provide a new trait (e.g., disease resistance).
+                              </p>
+                              <p class="lead">
+                              CRISPR technology relies on two molecular components: a guide RNA (gRNA) and the Cas9 protein responsible for cutting DNA. Cas9 and the gRNA interact in cells to form a molecular complex that recognizes and cleaves a target DNA sequence that is complementary to the gRNA sequence. Because the gRNA sequence can be precisely designed by researchers to be complementary to any location in the genome of a cell, Cas9 can be targeted to any gene of interest to initiate a break in the DNA. That break in the DNA will lead to a genetic change in that location. The genetic change is not directly created by the Cas9-gRNA complex, but rather via DNA repair pathways in cells that make a mistake when trying to fix the DNA break induced by the Cas9-gRNA complex (Fig. 1a).
+                              </p>
+                              <div style="text-align: center; width: 100%">
+                                  <%= image_tag "info/CRISPR_Cas9_Gene_Editing_Figure.png", style: "width:1000px" %>
+                              </div>
+                                  <p class="lead">
+                              CRISPR is an efficient, versatile and precise gene-editing system, which accounts for its rising popularity as a molecular tool for basic and applied biological research in plants and animals. However, CRISPR-mediated gene editing often needs to be adapted to work effectively in a new organism. In 2017, research groups at Yale University initiated work to optimize this gene-editing technology for use in citrus cultivars. This was an important goal to achieve, as an effective CRISPR/Cas9 system in citrus would allow researchers to easily create new cultivars with value-added traits of interest to citrus growers by creating precise genetic changes. Over the last few years, many improvements have been made in developing CRISPR to work effectively in Citrus cultivars. These improvements now allow researchers to use CRISPR to create targeted modifications at multiple genes in the same plant (Fig. 1b). This approach is known as multiplex CRISPR and relies on expressing multiple gRNAs with different sequences in plant cells. These gRNAs individually interact with Cas9 to form different Cas9-gRNA complexes that can each target a specific gene of interest for creating modifications in the citrus genome (Fig. 1b).
+                              </p>
+                          <!--VECTORS-->
+                          <% elsif params[:info] == "vectors"%>
+                              <p class="lead">
+                              A vector can be defined as a carrier or vehicle used to introduce desirable traits or genes into plants, enabling scientists to engineer and modify their genetics. Specifically, a vector used for plant transformation is typically a small, circular DNA molecule called a plasmid. These plasmids originate from bacteria and can easily be engineered by scientists to introduce genes of interest into plants (see Plant transformation).
+                              </p>
+                              <p class="lead">
+                              The vectors we use contain a segment of DNA called T-DNA. It is this section that can be engineered and is transferred in the plant genome via Agrobacterium. The T-DNA can be engineered to contain selection markers (1) and all the desirable trait(s) or gene(s) of interest (2).  Once the vector has been engineered to include markers and genes of interest, it is referred to as a construct.
+                              </p>
+                              <p class="lead">
+                              (1) The selection markers are essential to identify and select transformed cells. These markers  can have different properties such as genes conferring resistance to antibiotics or herbicides, or genes that produce fluorescent proteins (e.g. Green Fluorescent Protein, GFP). The selection marker genes are flanked by stretches of DNA upstream and downstream called the promoter and terminator respectively, which control the expression level of the gene. In our studies  we used a selection marker gene coding for GFP. We use this selection marker in plants due to the ease with which we can identify transformed plants. (See photo “GFP positive plant”)
+                              </p>
+                              <div style="text-align: center; width: 100%">
+                                  <%= image_tag "info/GFPplant.png", style: "width:400px" %>
+                              </div>
+                              <br>
+                              <p class="lead">
+                              (2) The traits or genes of interest that are included in a construct can vary greatly based on the goal; it can be genes that confer resistance to diseases, drought tolerance, or genes necessary for CRISPR/Cas9 gene editing.. In this USDA funded project, we used a construct as shown in the Figure: Model of the construct, containing the gene encoding for the Cas9 protein and a segment encoding four gRNA that will guide the Cas9 protein to the gene of interest to create a mutation (see CRISPR section). To express Cas9 and the guides in plants, promoters are added upstream to activate gene expression, while terminators are included to end transcription.
+                              </p>
+                              <div style="text-align: center; width: 100%">
+                                  <%= image_tag "info/USDAvector.png" %>
+                              </div>
+                          <!--TRANSGENIC PLANTS-->
+                          <% elsif params[:info] == "transgenic-plants"%>
+                              <p class="lead">
+                              Seeds of two citrus varieties, Carrizo Citrange and Valencia sweet orange, were germinated in a laboratory setting. The shoots of the seedlings were used for the transformation process using a modified version of a previously described method (Orbović and Grosser, 2015). Transformation is the term used for the transfer of DNA into an organism.
+                              </p>
+                              <p class="lead">
+                              Based on that method, cut pieces of shoots (called explants)  were exposed to  the bacteria Agrobacterium tumefaciens containing the desired genetic material, or construct (see Vectors). After a three-day incubation in the dark, the explants were transferred to culture media with sugar, hormones, and antibiotics for selection. The explants were allowed to grow at a temperature of 28°C.
+                              </p>
+                              <p class="lead">
+                              Transgenic shoots were identified by screening for green fluorescent protein (GFP) signal and then transferred to elongation media for further growth. Once the shoots elongated, they were separated from the explants and either rooted in a growth medium (for Carrizo) or micro-grafted onto rootstocks (for Valencia).
+                              </p>
+                              <div style="text-align: center; width: 100%">
+                                  <%= image_tag "info/processPhotos.png" %>
+                              </div>
+                              <p class="lead">
+                              The well-rooted plants were transferred to soil and subjected to six heat treatment cycles to induce CRISPR/Cas9 gene editing (see CRISPR/Cas9 gene editing), alternating between 37°C for 48 hours and 24°C for 24 hours. Samples of new leaves were collected for DNA extraction and genotyping.
+                              </p>
+                              <br>
+                              <div style="text-align: center; width: 100%">
+                                  <%= image_tag "info/transformation1.png", style: "width:800px" %>
+                              </div>
+                              <div style="text-align: center; width: 100%">
+                                  <%= image_tag "info/transformation2.png", style: "width:800px" %>
+                              </div>
+                              <div style="text-align: center; width: 100%">
+                                  <%= image_tag "info/transformation3.png", style: "width:800px" %>
+                              </div>
+                              <br>
+                              <p>
+                              Orbović, V., Grosser, J.W., 2015. Citrus transformation using juvenile tissue explants. <em>Methods Mol Biol</em> 1224, 245-257.
+                              </p>
+
+                          <%end%>
+
+                      <% else %>
+                          <p>Did you click an item from the navigation bar?</p>
+                      <%end%>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</main>

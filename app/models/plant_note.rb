@@ -1,0 +1,2 @@
+class PlantNote < ApplicationRecord
+end

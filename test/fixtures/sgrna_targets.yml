@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sgRNA_ID: MyString
+  Gene_ID: MyString
+  bp_diff: MyString
+  pprox: MyString
+  PAM: MyString
+  gene_direction: MyString
+  gene_cutsite: MyString
+  genome_direction: MyString
+  genomeStart: MyString
+  genomeEnd: MyString
+  target: MyString
+
+two:
+  sgRNA_ID: MyString
+  Gene_ID: MyString
+  bp_diff: MyString
+  pprox: MyString
+  PAM: MyString
+  gene_direction: MyString
+  gene_cutsite: MyString
+  genome_direction: MyString
+  genomeStart: MyString
+  genomeEnd: MyString
+  target: MyString

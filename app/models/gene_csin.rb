@@ -1,0 +1,2 @@
+class GeneCsin < ApplicationRecord
+end

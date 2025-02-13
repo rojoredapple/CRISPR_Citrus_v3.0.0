@@ -1,0 +1,2 @@
+class GuideTable < ApplicationRecord
+end

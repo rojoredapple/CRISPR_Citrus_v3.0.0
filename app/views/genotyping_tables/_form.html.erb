@@ -1,0 +1,47 @@
+<%= form_with(model: genotyping_table) do |form| %>
+  <% if genotyping_table.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(genotyping_table.errors.count, "error") %> prohibited this genotyping_table from being saved:</h2>
+
+      <ul>
+        <% genotyping_table.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Plant_ID %>
+    <%= form.text_field :Plant_ID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Gene_ID %>
+    <%= form.text_field :Gene_ID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sgRNA_ID %>
+    <%= form.text_field :sgRNA_ID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Genotyping_image %>
+    <%= form.text_field :Genotyping_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Editing_efficiency %>
+    <%= form.text_field :Editing_efficiency %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Disruption_efficiency %>
+    <%= form.text_field :Disruption_efficiency %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

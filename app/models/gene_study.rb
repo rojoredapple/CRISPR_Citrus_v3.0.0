@@ -1,0 +1,2 @@
+class GeneStudy < ApplicationRecord
+end

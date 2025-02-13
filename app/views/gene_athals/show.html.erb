@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gene id:</strong>
+  <%= @gene_athal.Gene_ID %>
+</p>
+
+<p>
+  <strong>Orthogroup genes athal:</strong>
+  <%= @gene_athal.Orthogroup_genes_Athal %>
+</p>
+
+<%= link_to 'Edit', edit_gene_athal_path(@gene_athal) %> |
+<%= link_to 'Back', gene_athals_path %>

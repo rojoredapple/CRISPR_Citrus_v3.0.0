@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sgRNA_ID: MyString
+  Sequence: MyString
+  Orthologs_targeted: MyString
+
+two:
+  sgRNA_ID: MyString
+  Sequence: MyString
+  Orthologs_targeted: MyString

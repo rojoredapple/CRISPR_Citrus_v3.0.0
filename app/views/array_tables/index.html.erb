@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Array Tables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Array id</th>
+      <th>Length</th>
+      <th>Arrived</th>
+      <th>Supplier</th>
+      <th>Batch</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @array_tables.each do |array_table| %>
+      <tr>
+        <td><%= array_table.Array_ID %></td>
+        <td><%= array_table.Length %></td>
+        <td><%= array_table.Arrived %></td>
+        <td><%= array_table.Supplier %></td>
+        <td><%= array_table.Batch %></td>
+        <td><%= link_to 'Show', array_table %></td>
+        <td><%= link_to 'Edit', edit_array_table_path(array_table) %></td>
+        <td><%= link_to 'Destroy', array_table, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Array Table', new_array_table_path %>

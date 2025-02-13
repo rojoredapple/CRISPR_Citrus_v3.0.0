@@ -1,0 +1,2 @@
+class GpNote < ApplicationRecord
+end

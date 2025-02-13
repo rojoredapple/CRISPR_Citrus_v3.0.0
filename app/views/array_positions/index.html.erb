@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Array Positions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Array id</th>
+      <th>Sgrna id</th>
+      <th>Trna position</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @array_positions.each do |array_position| %>
+      <tr>
+        <td><%= array_position.Array_ID %></td>
+        <td><%= array_position.sgRNA_ID %></td>
+        <td><%= array_position.tRNA_position %></td>
+        <td><%= link_to 'Show', array_position %></td>
+        <td><%= link_to 'Edit', edit_array_position_path(array_position) %></td>
+        <td><%= link_to 'Destroy', array_position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Array Position', new_array_position_path %>

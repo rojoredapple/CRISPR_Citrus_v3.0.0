@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Array id:</strong>
+  <%= @array_table.Array_ID %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @array_table.Length %>
+</p>
+
+<p>
+  <strong>Arrived:</strong>
+  <%= @array_table.Arrived %>
+</p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= @array_table.Supplier %>
+</p>
+
+<p>
+  <strong>Batch:</strong>
+  <%= @array_table.Batch %>
+</p>
+
+<%= link_to 'Edit', edit_array_table_path(@array_table) %> |
+<%= link_to 'Back', array_tables_path %>

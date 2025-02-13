@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Genotyping Tables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Plant id</th>
+      <th>Gene id</th>
+      <th>Sgrna id</th>
+      <th>Genotyping image</th>
+      <th>Editing efficiency</th>
+      <th>Disruption efficiency</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @genotyping_tables.each do |genotyping_table| %>
+      <tr>
+        <td><%= genotyping_table.Plant_ID %></td>
+        <td><%= genotyping_table.Gene_ID %></td>
+        <td><%= genotyping_table.sgRNA_ID %></td>
+        <td><%= genotyping_table.Genotyping_image %></td>
+        <td><%= genotyping_table.Editing_efficiency %></td>
+        <td><%= genotyping_table.Disruption_efficiency %></td>
+        <td><%= link_to 'Show', genotyping_table %></td>
+        <td><%#= link_to 'Edit', edit_genotyping_table_path(genotyping_table) %></td>
+        <td><%#= link_to 'Destroy', genotyping_table, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<!--
+<table>
+  <tbody class="bg-white">
+    <% @plant_tables.each do |plant_table| %>
+      <% @genotyping_tables.each do |genotyping_table| %>
+        <% if genotyping_table.Plant_ID == plant_table.Plant_ID%>
+          <% @gene_tables.each do |gene_table| %>
+            <% if genotyping_table.Gene_ID == gene_table.Gene_ID%>
+            <tr>
+              <td><%= "Genotype: " + genotyping_table.Plant_ID%></td>
+              <td><%= "plant: " + plant_table.Plant_ID%></td>
+              <td><%= "genotype gene id: " + genotyping_table.Gene_ID%></td>
+              <td><%= "gene id: " + gene_table.Gene_ID%></td>
+            </tr>
+            <% end %> 
+          <% end %> 
+        <% end %> 
+      <% end %> 
+    <% end %> 
+  </tbody>
+</table>
+-->
+
+<br>
+
+<%#= link_to 'New Genotyping Table', new_genotyping_table_path %>

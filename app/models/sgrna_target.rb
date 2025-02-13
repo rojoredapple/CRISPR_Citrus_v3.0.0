@@ -1,0 +1,2 @@
+class SgrnaTarget < ApplicationRecord
+end

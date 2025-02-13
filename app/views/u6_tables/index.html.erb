@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>U6 Tables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vector id</th>
+      <th>Sgrna id</th>
+      <th>Position</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @u6_tables.each do |u6_table| %>
+      <tr>
+        <td><%= u6_table.Vector_ID %></td>
+        <td><%= u6_table.sgRNA_ID %></td>
+        <td><%= u6_table.Position %></td>
+        <td><%= link_to 'Show', u6_table %></td>
+        <td><%= link_to 'Edit', edit_u6_table_path(u6_table) %></td>
+        <td><%= link_to 'Destroy', u6_table, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New U6 Table', new_u6_table_path %>

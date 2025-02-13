@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Array_ID: MyString
+  Length: MyString
+  Arrived: MyString
+  Supplier: MyString
+  Batch: MyString
+
+two:
+  Array_ID: MyString
+  Length: MyString
+  Arrived: MyString
+  Supplier: MyString
+  Batch: MyString

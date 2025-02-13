@@ -1,0 +1,72 @@
+<%= form_with(model: plant_table) do |form| %>
+  <% if plant_table.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plant_table.errors.count, "error") %> prohibited this plant_table from being saved:</h2>
+
+      <ul>
+        <% plant_table.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Plant_ID %>
+    <%= form.text_field :Plant_ID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Species %>
+    <%= form.text_field :Species %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Vector %>
+    <%= form.text_field :Vector %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Link %>
+    <%= form.text_field :Link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Genotyping_summary %>
+    <%= form.text_field :Genotyping_summary %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Short_note %>
+    <%= form.text_field :Short_note %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Live %>
+    <%= form.text_field :Live %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Phenotyping_text %>
+    <%= form.text_field :Phenotyping_text %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Phenotyping_image %>
+    <%= form.text_field :Phenotyping_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :extra_field %>
+    <%= form.text_field :extra_field %>
+  </div>
+
+  <div class="field">
+    <%= form.label :additional_field %>
+    <%= form.text_field :additional_field %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,77 @@
+<%= form_with(model: vector_table) do |form| %>
+  <% if vector_table.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vector_table.errors.count, "error") %> prohibited this vector_table from being saved:</h2>
+
+      <ul>
+        <% vector_table.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Vector_ID %>
+    <%= form.text_field :Vector_ID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Backbone %>
+    <%= form.text_field :Backbone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tRNA_array %>
+    <%= form.text_field :tRNA_array %>
+  </div>
+
+  <div class="field">
+    <%= form.label :U6_vector %>
+    <%= form.text_field :U6_vector %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Short_note %>
+    <%= form.text_field :Short_note %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Vector_link %>
+    <%= form.text_field :Vector_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Cloned %>
+    <%= form.text_field :Cloned %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Cloned_by %>
+    <%= form.text_field :Cloned_by %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Box_1_Ago_EHA105 %>
+    <%= form.text_field :Box_1_Ago_EHA105 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Transformed_valencia %>
+    <%= form.text_field :Transformed_valencia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Transformed_carrizo %>
+    <%= form.text_field :Transformed_carrizo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :GFP_positives %>
+    <%= form.text_field :GFP_positives %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

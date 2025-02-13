@@ -1,0 +1,2 @@
+class VectorTable < ApplicationRecord
+end

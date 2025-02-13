@@ -1,0 +1,18 @@
+Plant_ID,Species,Vector,Link,Genotyping_summary,Short_note,Live,Phenotyping_text,Phenotyping_image,extra_field,additional_field
+YCCXXX1,C. sinsensis “Valencia”,"YCVXXX1",plant_carousel1.png,example_plant_graph1.png,Plant description - to be filled,TRUE,PHENOTYPING TEXT,pheno.png,extrafield,additionalfield
+YCCXXX2,C. sinsensis “Valencia”,YCVXXX1,plant_carousel2.png,,These are some notes,TRUE,PHENOTYPING TEXT,pheno.png,extrafield,additionalfield
+YCCXXX3,C. sinsensis “Valencia” For plant 3,YCVXXX1,plant_carousel1.png,example_plant_graph2.png,Plant description - to be filled,TRUE,PHENOTYPING TEXT,,extrafield,additionalfield
+YCCXXX4,C. sinsensis “Valencia For plant 4”,YCVXXX1,plant_carousel2.png,example_plant_graph1.png,Plant description - to be filled,FALSE,PHENOTYPING TEXT,pheno.png,extrafield,additionalfield
+YCCXXX5,C. sinsensis “Valencia”,YCVXXX2,plant_carousel1.png,example_plant_graph2.png,Plant description - to be filledPlant description - to be filledPlant  description,TRUE,PHENOTYPING TEXT,pheno.png,extrafield,additionalfield
+YCCXXX6,C. sinsensis “Valencia”,YCVXXX2,plant_carousel2.png,example_plant_graph1.png,Plant description - to be filled,TRUE,PHENOTYPING TEXT,,extrafield,additionalfield
+YCCXXX7,C. sinsensis “Valencia”,YCVXXX2,plant_carousel1.png,example_plant_graph2.png,Plant description - to be filled,FALSE,PHENOTYPING TEXT,,extrafield,additionalfield
+YCCXXX8,C. sinsensis “Valencia”,YCVXXX2,plant_carousel2.png,example_plant_graph1.png,Plant description - to be filled,TRUE,PHENOTYPING TEXT,,extrafield,additionalfield
+YCCXXX9,C. sinsensis “Valencia”,YCVXXX3,plant_carousel1.png,example_plant_graph2.png,Plant description - to be filled,TRUE,PHENOTYPING TEXT,pheno.png,extrafield,additionalfield
+YCCXXX10,C. sinsensis “Valencia”,YCVXXX3,plant_carousel2.png,example_plant_graph1.png,Plant description - to be filled,TRUE,PHENOTYPING TEXT,pheno.png,extrafield,additionalfield
+YCCXXX11,C. sinsensis “Valencia”,YCVXXX3,plant_carousel1.png,example_plant_graph1.png,Plant description - to be filled,TRUE,PHENOTYPING TEXT,pheno.png,extrafield,additionalfield
+YCCXXX12,C. sinsensis “Valencia”,YCVXXX3,plant_carousel1.png,example_plant_graph1.png,Plant description - to be filled,TRUE,PHENOTYPING TEXT,pheno.png,extrafield,additionalfield
+YCCXXX13,C. sinsensis “Valencia”,YCVXXX4,plant_carousel1.png,example_plant_graph1.png,Plant description - to be filled,FALSE,PHENOTYPING TEXT,pheno.png,extrafield,additionalfield
+YCCXXX14,C. sinsensis “Valencia”,YCVXXX4,plant_carousel1.png,example_plant_graph1.png,Plant description - to be filled,FALSE,PHENOTYPING TEXT,pheno.png,extrafield,additionalfield
+YCCXXX15,C. sinsensis “Valencia”,YCVXXX4,www.google.com,example_plant_graph1.png,Plant description - to be filled,FALSE,PHENOTYPING TEXT,pheno.png,extrafield,additionalfield
+YCCXXX16,C. sinsensis “Valencia”,YCVXXX4,www.google.com,example_plant_graph1.png,Plant description - to be filled,FALSE,PHENOTYPING TEXT,pheno.png,extrafield,additionalfield
+YCCXXX17,C. sinsensis “Valencia”,YCVXXX3,www.google.com,erroriamgeasdas.png,This is the plant description,FALSE

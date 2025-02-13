@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gene id:</strong>
+  <%= @gene_csin.Gene_ID %>
+</p>
+
+<p>
+  <strong>Orthogroup genes csin:</strong>
+  <%= @gene_csin.Orthogroup_genes_Csin %>
+</p>
+
+<%= link_to 'Edit', edit_gene_csin_path(@gene_csin) %> |
+<%= link_to 'Back', gene_csins_path %>

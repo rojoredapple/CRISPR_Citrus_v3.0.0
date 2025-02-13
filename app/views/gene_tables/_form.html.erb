@@ -1,0 +1,67 @@
+<%= form_with(model: gene_table) do |form| %>
+  <% if gene_table.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gene_table.errors.count, "error") %> prohibited this gene_table from being saved:</h2>
+
+      <ul>
+        <% gene_table.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Gene_ID %>
+    <%= form.text_field :Gene_ID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Description %>
+    <%= form.text_field :Description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Chromosome %>
+    <%= form.text_field :Chromosome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Location %>
+    <%= form.text_field :Location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Orthogroup %>
+    <%= form.text_field :Orthogroup %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Link %>
+    <%= form.text_field :Link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :HZAU_link %>
+    <%= form.text_field :HZAU_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Sequence_link %>
+    <%= form.text_field :Sequence_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Diagram_link %>
+    <%= form.text_field :Diagram_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Live %>
+    <%= form.text_field :Live %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

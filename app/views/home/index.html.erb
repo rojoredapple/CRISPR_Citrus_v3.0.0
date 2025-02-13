@@ -1,0 +1,327 @@
+<main class="main" id="top">
+
+  <!--- NAVBAR------->
+  <%= render 'shared/navbar'%>
+
+  <!----- BACKGROUND HOLDER ------>
+  <section class="py-0 overflow-hidden" id="banner">
+    <div class="bg-holder overlay" style="background-image: url('/alice.jpg');background-position: center bottom;">
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center align-items-center pt-8 pt-lg-10 pb-lg-9 pb-xl-0">
+        <div class="col-md-11 col-lg-8 col-xl-4 pb-7 pb-xl-9 text-center text-xl-left">
+          <h1 class="text-white font-weight-heavy">Combating HLB <br /> with gene editing</h1>
+          <p class="lead text-white">Identification of HLB Susceptibility Genes in a Citrus Population Generated using Multiplexed CRISPR/Cas9 Gene Editing</p>
+        </div>
+        <div class="col-md-11 col-lg-8 col-xl-4 pb-7 pb-xl-9 filter-logo">
+          <%= image_tag "landing/logo2.svg", class: "p-logo", alt: ""%>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!----- SEARCH BAR -------->
+  <section class="py-3 bg-dark shadow-sm">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+
+      <%= form_tag(search_page_path, :method => "get", class: 'search-box') do %>
+        <form class="position-relative" data-toggle="search" data-display="static">
+          <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control search-input" %>
+          <span class="fas fa-search search-box-icon"></span>
+        </div>
+        </form>
+      <% end %>
+
+      </div>
+    </div>
+  </section>
+    <!---- Navigating the Collection ------->
+	<section class="bg-light text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="fs-2 fs-sm-4 fs-md-5">Navigating the collection</h1>
+          <p class="lead">The collection can be searched by plant, gene or guide.</p>
+        </div>
+      </div>
+      <div class="row mt-6">
+        <div class="col-lg-4">
+          <div class="card card-span h-100">
+            <div class="card-span-img"><span class="fas fa-leaf fs-4 text-success"></span></div>
+            <div class="card-body pt-6 pb-4">
+              <h5 class="mb-2">Plants</h5>
+              <p>Individual plants in the population can be searched to identify mutants of interest</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mt-6 mt-lg-0">
+          <div class="card card-span h-100">
+            <div class="card-span-img"><span class="fas fa-dna fs-5 text-warning"></span></div>
+            <div class="card-body pt-6 pb-4">
+              <h5 class="mb-2">Genes</h5>
+              <p>Search to see if a given gene has been targeted within the population</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mt-6 mt-lg-0">
+          <div class="card card-span h-100">
+            <div class="card-span-img"><span class="fas fa-bullseye fs-6 text-danger"></span></div>
+            <div class="card-body pt-6 pb-4">
+              <h5 class="mb-2">Guides</h5>
+              <p>The list of sgRNAs, and the gene(s) they target</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!---- OVERVIEW ------->
+  <section class="bg-200 text-center">
+    <div class="container">
+      <h1 class="fs-2 fs-sm-4 fs-md-5">Overview</h1>
+      <div class="row justify-content-center">
+        <p class="lead"> The U.S. citrus industry is facing unprecedented challenges from the spread of citrus greening disease (i.e Huanglongbing or HLB) in citrus-growing states like Florida, Texas and California. While traditional breeding approaches using natural variation are one way of introducing HLB tolerance into select cultivars, alternative approaches to rapidly generate new cultivars that are resistant/tolerant to the HLB-causing bacterial pathogen would be extremely valuable. The overall goal of this two year project is to utilize the extensive transcriptomic and proteomic information available for HLB infected citrus to develop a large-scale population of CRISPR/Cas9 gene-edited Valencia plants that can be screened for tolerance to HLB. This project will provide a sustainable resource (i.e. collection of citrus mutants) for the citrus research community that can also be screened for resistance to other diseases and for other value-added traits in the future, and thus accelerate discoveries that would benefit the U.S. citrus industry many years after the funding period is completed. As part of this project, we also propose to study the economic and societal impact of using gene-editing technologies like CRISPR/Cas9 to create new citrus cultivars, with a focus on increasing acceptance of gene-edited crops by consumers and growers. In the longer term, the mutations identified as enhancing defense against HLB can then be engineered into other commercially important citrus cultivars and field-tested in Florida and California.</p>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <!---- VIDEO ------>
+      <div class="row justify-content-center text-center">
+        <% if mobile_device != "mobile" %>
+        <iframe frameborder="0" src="https://www.youtube.com/embed/05Bxegh-0M8" width="1280" height="720" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <% elsif mobile_device = "mobile" %>
+        <iframe frameborder="0" src="https://www.youtube.com/embed/05Bxegh-0M8" width="320" height="180" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <%end%>
+        <br/>
+              <%= link_to "Citrus and HLB", info_index_path(info: "hlb"), class:"videolink fs-1"%> <span class="lead fs-0">|</span>
+              <%= link_to "Selection of Target Genes", info_index_path(info: "target-genes"), class:"videolink fs-1" %> <span class="lead fs-0">|</span>
+              <%= link_to "CRISPR/Cas9 Gene Editing", info_index_path(info: "gene-editing"), class:"videolink fs-1" %> <span class="lead fs-0">|</span>
+              <%= link_to "Vectors", info_index_path(info: "vectors"), class:"videolink fs-1" %> <span class="lead fs-0">|</span>
+              <%= link_to "Creation of transgenic plants", info_index_path(info: "transgenic-plants"), class:"videolink fs-1" %>
+      </div>
+    </div>
+  </section>
+  <!--- TEAM --------->
+  <section>
+    <div class="container align-content-center">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <h1 class="fs-2 fs-sm-4 fs-md-5">Team</h1>
+          </div>
+        </div>
+
+        <div class="row ">
+
+          <div class="col-sm-4">
+            <div class="service-block mb-3 mb-lg-0">
+              <a href="https://irishlab.yale.edu/">
+                <%= image_tag "logos/yalelogo.png", alt:"", class:"yaleuf" %>
+                <h4 class="mb-3 mt-4">Irish Lab</h4>
+              </a>
+              <p class="mb-2 fs-0">Molecular, Cellular, and Developmental Biology</p>
+              <p class="mb-2">Over 25 years of research experience in plant developmental and molecular genetics.</p>
+              <ul class="list-unstyled fs-0 fw-900" style="font-weight: 600;">
+                <li>Prof. Vivian Irish</li>
+                <li>Cintia H. D. Sagawa</li>
+                <li>Archana Khadgi</li>
+                <li>Ivy Lin</li>
+                <li>Corina Vernon</li>
+                <li>Fei Zhang (former member)</li>
+                <li>Yewei Wang (former member)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="service-block mb-3 mb-lg-0">
+              <a href="https://jacob-lab.yale.edu/">
+                <%= image_tag "logos/yalelogo.png", alt:"", class:"yaleuf" %>
+                <h4 class="mb-3 mt-4">Jacob Lab</h4>
+              </a>
+              <p class="mb-0">Experience in optimizing novel genome-engineering technologies in plants, with a focus on Citrus.</p>
+              <ul class="list-unstyled fs-0 fw-900" style="font-weight: 600;">
+                <br>
+                <li>A/Prof Yannick Jacob</li>
+                <li>Chantal LeBlanc</li>
+                <li>Geoffrey Thomson</li>
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="col-sm-4">
+            <div class="service-block mb-3 mb-lg-0">
+              <a href="https://fred.ifas.ufl.edu/faculty/house/">
+                <%= image_tag "logos/UF.png", alt:"", class:"yaleuf" %>
+                <h4 class="mb-3 mt-4">Lisa House and Bachir Kassas</h4>
+              </a>
+              <p class="mb-2 fs-0">Food and Resource Economics Department</p>
+              <p class="mb-0">Expertise in consumer acceptance of biotech foods, demand and consumer perception of fruits and vegetables.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!---- EXPERIENCE --->
+  <section class="bg-200">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <h1 class="fs-2 fs-sm-4 fs-md-5 ">Experience</h1>
+          </div>
+        </div>
+
+      <div class="row align-items-center text-start">
+
+        <div class="col-lg-7">
+          <div class="author-info pl-4 mt-5 mt-lg-0">
+            <p class="lead">In recent years the Irish and Jacob labs have developed approaches that have significantly improved CRISPR/Cas9 efficiency in citrus. These include the use of codon-optimized versions of Cas9, along with <%= link_to "specific promoters that augment Cas9 activity in dividing cells", "https://link.springer.com/article/10.1007/s00299-017-2202-4"%>. The groups have also developed vectors to facilitate identification of transgenic events by using a combination of selectable markers (GFP fluorescence and resistance to kanamycin) and optimized citrus transformation protocols to generate more citrus transgenic plants per transformation. Research from these collaborating labs has also led to advances which increase the rate of CRISPR/Cas9-mediated mutagenesis by extending the time of the citrus regeneration process and the <%= link_to "exposure to heat stress", "https://onlinelibrary.wiley.com/doi/10.1111/tpj.13782"%> which increases the frequency of CRISPR/Cas9-induced mutations many-fold relative to transformed plants not exposed to heat stress.</p>
+            <p class="lead">The labs have demonstrated that multiplex gene editing is feasible in Citrus. Multiplex gene editing refers to the targeting of multiple genes in a single event, so as to abrogate the function of several genes at once. This was utilized to successfully target three thorn development genes simultaneously using multiplex CRISPR/Cas9. This multiplex approach was extremely valuable in addressing <%= link_to "genetic redundancy between the thorn developmental genes", "https://www.sciencedirect.com/science/article/abs/pii/S0960982220307557"%> of Citrus as only by mutating several genes simultaneously was it possible to uncover overlapping genetic functions that were not apparent in single knockout lines. As genetic redundancy could also play a role in HLB susceptibility, the ability to inactivate multiple genes at once will be essential in testing the roles of multiple genes in disease response. Thus the labs involved in this project have a robust protocol to rapidly, effectively, and efficiently knock out multiple genes simultaneously in Citrus.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="about-img">
+          <%= image_tag "landing/experience.png", alt:"", class:"img-fluid", style:"width: 40em" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!--- FUNDING ----->
+  <section class="bg-light text-center">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <h1 class="fs-2 fs-sm-4 fs-md-5 ">Funding</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <div class="author-info pl-4 mt-5 mt-lg-0">
+            <p class="lead">The CRISPR citrus project to identify HLB susceptibility genes in a Citrus population generated using multiplexed CRISPR/Cas9 gene editing is funded as part of the <%= link_to "USDA-NIFA’s Emergency Citrus Disease Research & Extension (ECDRE) program", "https://nifa.usda.gov/press-release/usda-nifa-tackles-harmful-citrus-disease-research-grants"%>.</p>
+            <p class="lead">This program promotes collaboration, open communication and the exchange of information to accelerate the application of scientific discovery and technology to farm-level solutions for HLB.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="about-img">
+            <%= image_tag "landing/USDA.png", alt:"", class:"img-fluid"%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!---------- FOOTER ---------------------->
+  <!---------- COMPUTER ---------------------->
+  <% if mobile_device != "mobile" %>
+  <section class="bg-dark pt-8 pb-4">
+    <div class="container d-flex justify-content-center">
+      <div class="position-absolute btn-back-to-top bg-dark">
+      <a class="text-600" href="#banner" data-fancyscroll="data-fancyscroll"><span class="fas fa-chevron-up" data-fa-transform="rotate-45"></span></a>
+      </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 mr-5">
+          <%= image_tag "logos/yalelogo.png", alt:"", class:"logo-border-test", style:"height: 140px;" %>
+        </div>
+
+        <div class="col">
+          <div class="row mt-5 mt-lg-0 ml-5">
+            <div class="col-2 col-lg-5 mt-1">
+              <ul class="list-unstyled">
+                <li class="nav-item mb-1 ml-3"><a class="text-600 fs-2" href="<%= plant_plants_path %>"><span class="mr-2 fas fa-leaf" role="img" aria-label="leaf"></span>Plants</a></li>
+                <li class="nav-item mb-1 ml-3"><a class="text-600 fs-2" href="<%= gene_genes_path %>"><span class="mr-2 fas fa-dna" role="img" aria-label="dna"></span> Genes</a></li>
+                <li class="nav-item mb-1 ml-3"><a class="text-600 fs-2" href="<%= guide_guides_path %>"><span class="mr-2 fas fa-bullseye" role="img" aria-label="dna"></span>Guides</a></li>
+                <li>
+                <span class="d-flex inline-block mt-3">
+                  <a class="btn btn-outline-light border-2x rounded-pill" href="<%= contact_form_path %>">Contact</a>
+                  <a class="icon-item bg-white text-twitter ml-2 " href="https://twitter.com/vivian_irish?lang=en" target="_blank"><span class="fab fa-twitter"></span></a>
+                </span>
+                </li>
+              </ul>
+            </div>
+        <div class="col mt-5 mt-md-0 ml-4">
+              <h5 class="text-uppercase text-white opacity-85 mt-2 mb-2">Yale MCDB Laboratories</h5>
+              <!--<p class="text-600 opacity-50">CRISPR Citrus </p>-->
+              <ul class="list-unstyled">
+                <li>
+                  <h5 class="fs-1 mb-1"><%= link_to "Irish Lab", "https://irishlab.yale.edu/", class: "text-600",target: :_blank%></h5>
+                  <h5 class="fs-1 mb-1"><%= link_to "Jacob Lab", "https://jacob-lab.yale.edu/", class: "text-600",target: :_blank%></h5>
+                </li>
+              </ul>
+              <h5 class="text-uppercase text-white opacity-85 mt-2 mb-2">University of Florida</h5>
+              <!--<p class="text-600 opacity-50">CRISPR Citrus </p>-->
+              <ul class="list-unstyled">
+                <li>
+                  <h5 class="fs-1 mb-1"><%= link_to "Lisa House", "https://fred.ifas.ufl.edu/about/directory/lisa-house/", class: "text-600", target: :_blank%></h5>
+                  <h5 class="fs-1 mb-1"><%= link_to "Bachir Kassas", "https://fred.ifas.ufl.edu/about/directory/bachir-kassas/", class: "text-600", target: :_blank%></h5>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+        <%= image_tag "logos/USDA.png", alt:"", class:"", style:"height: 160px; background-color: white"%>
+      </div>
+    </div>
+  </section>
+  <!---------- MOBILE ---------------------->
+  <% elsif mobile_device == "mobile" %>
+    <section class="bg-dark pt-8 pb-4">
+    <div class="container d-flex justify-content-center">
+      <div class="position-absolute btn-back-to-top bg-dark">
+      <a class="text-600" href="#banner" data-fancyscroll="data-fancyscroll"><span class="fas fa-chevron-up" data-fa-transform="rotate-45"></span></a>
+      </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 d-flex flex-center">
+          <%= image_tag "logos/yalelogo.png", alt:"", class:"logo-border-test", style:"height: 140px;" %>
+        </div>
+        </div>
+
+        <div class="d-flex flex-center">
+        <div class="list-unstyled ml-1 mt-4">
+          <div class="d-flex flex-center mb-3">
+          <a class="btn btn-outline-light border-2x rounded-pill" href="<%= contact_form_path %>">Contact</a>
+          <a class="icon-item bg-white text-twitter ml-3"href="https://twitter.com/vivian_irish?lang=en" target="_blank"><span class="fab fa-twitter"></span></a>
+          </div>
+          <a class="text-600 fs-1 nav-item mb-1 mr-2" href="<%= plant_plants_path %>"><span class="mr-1 fas fa-leaf" role="img" aria-label="leaf"></span>Plants</a>
+          <a class="text-600 fs-1 nav-item mb-1 mr-2" href="<%= gene_genes_path %>"><span class="mr-1 fas fa-dna" role="img" aria-label="dna"></span>Genes</a>
+          <a class="text-600 fs-1 nav-item mb-1" href="<%= guide_guides_path %>"><span class="mr-1 fas fa-bullseye" role="img" aria-label="dna"></span>Guides</a>
+
+        </div>
+        </div>
+
+        <div class="d-flex flex-center mt-3">
+        <ul class="list-unstyled">
+          <h5 class="text-uppercase text-white opacity-85 mt-2 mb-1">Yale MCDB Laboratories</h5>
+          <li class="fs-1"><%= link_to "Irish Lab", "https://irishlab.yale.edu/", class: "text-600"%></li>
+          <li class="fs-1"><%= link_to "Jacob Lab", "https://jacob-lab.yale.edu/", class: "text-600"%></li>
+          <h5 class="text-uppercase text-white opacity-85 mt-2 mb-1">University of Florida</h5>
+          <li class="fs-1"><%= link_to "Lisa House", "https://fred.ifas.ufl.edu/about/directory/lisa-house/", class: "text-600"%></li>
+          <li class="fs-1"><%= link_to "Bachir Kassas", "https://fred.ifas.ufl.edu/about/directory/bachir-kassas/", class: "text-600"%></li>
+        </ul>
+        </div>
+      <div class="d-flex flex-center">
+        <%= image_tag "logos/USDA.png", alt:"", style:"height: 160px; background-color: white"%>
+      </div>
+    </div>
+  </section>
+  <% end %>
+</main>
+
+

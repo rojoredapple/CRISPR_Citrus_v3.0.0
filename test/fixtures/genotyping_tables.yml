@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Plant_ID: MyString
+  Gene_ID: MyString
+  sgRNA_ID: MyString
+  Genotyping_image: MyString
+  Editing_efficiency: MyString
+  Disruption_efficiency: MyString
+
+two:
+  Plant_ID: MyString
+  Gene_ID: MyString
+  sgRNA_ID: MyString
+  Genotyping_image: MyString
+  Editing_efficiency: MyString
+  Disruption_efficiency: MyString

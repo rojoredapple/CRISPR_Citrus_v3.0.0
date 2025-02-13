@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sgrna Targets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sgrna id</th>
+      <th>Gene id</th>
+      <th>Bp diff</th>
+      <th>Pprox</th>
+      <th>Pam</th>
+      <th>Gene direction</th>
+      <th>Gene cutsite</th>
+      <th>Genome direction</th>
+      <th>Genomestart</th>
+      <th>Genomeend</th>
+      <th>Target</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sgrna_targets.each do |sgrna_target| %>
+      <tr>
+        <td><%= sgrna_target.sgRNA_ID %></td>
+        <td><%= sgrna_target.Gene_ID %></td>
+        <td><%= sgrna_target.bp_diff %></td>
+        <td><%= sgrna_target.pprox %></td>
+        <td><%= sgrna_target.PAM %></td>
+        <td><%= sgrna_target.gene_direction %></td>
+        <td><%= sgrna_target.gene_cutsite %></td>
+        <td><%= sgrna_target.genome_direction %></td>
+        <td><%= sgrna_target.genomeStart %></td>
+        <td><%= sgrna_target.genomeEnd %></td>
+        <td><%= sgrna_target.target %></td>
+        <td><%= link_to 'Show', sgrna_target %></td>
+        <td><%= link_to 'Edit', edit_sgrna_target_path(sgrna_target) %></td>
+        <td><%= link_to 'Destroy', sgrna_target, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sgrna Target', new_sgrna_target_path %>

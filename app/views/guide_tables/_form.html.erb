@@ -1,0 +1,32 @@
+<%= form_with(model: guide_table) do |form| %>
+  <% if guide_table.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(guide_table.errors.count, "error") %> prohibited this guide_table from being saved:</h2>
+
+      <ul>
+        <% guide_table.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :sgRNA_ID %>
+    <%= form.text_field :sgRNA_ID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Sequence %>
+    <%= form.text_field :Sequence %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Orthologs_targeted %>
+    <%= form.text_field :Orthologs_targeted %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

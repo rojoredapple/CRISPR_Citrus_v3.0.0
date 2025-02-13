@@ -1,0 +1,34 @@
+<!--
+<p id="notice"><%= notice %></p>
+
+<h1>Guide Tables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sgrna id</th>
+      <th>Sequence</th>
+      <th>Orthologs targeted</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @guide_tables.each do |guide_table| %>
+      <tr>
+        <td><%= guide_table.sgRNA_ID %></td>
+        <td><%= guide_table.Sequence %></td>
+        <td><%= guide_table.Orthologs_targeted %></td>
+        <td><%= link_to 'Show', guide_table %></td>
+        <td><%= link_to 'Edit', edit_guide_table_path(guide_table) %></td>
+        <td><%= link_to 'Destroy', guide_table, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Guide Table', new_guide_table_path %>
+
+-->

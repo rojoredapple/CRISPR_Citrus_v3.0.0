@@ -1,0 +1,65 @@
+        <nav class="navbar navbar-standard navbar-light navbar-glass navbar-top sticky-kit navbar-expand-lg">
+          <button class="btn navbar-toggler-humburger-icon navbar-toggler mr-1 mr-sm-3" type="button" data-toggle="collapse" data-target="#navbarStandard" aria-controls="navbarStandard" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
+<!---------------------------------------LOGO----------------------------------------->
+          <a class="navbar-brand mr-1 mr-sm-3" href="<%= root_path %>">
+            <div class="d-flex align-items-center"><%= image_tag "logos/logo.svg", class:"mr-2 filter-logo", width:"40" %><span class="text-sans-serif">CRISPR Citrus</span>
+            </div>
+          </a>
+          
+          <div class="collapse navbar-collapse" id="navbarStandard">
+            <ul class="navbar-nav">
+<!---------------------------------------PLANTS, GENES & GUIDES-----------------------------------------> 
+              <li class="nav-item"><a class="nav-link" href="<%= plant_plants_path %>"><span class="mr-2 fas fa-leaf" role="img" aria-label="leaf"></span>Plants</a></li>
+              <li class="nav-item"><a class="nav-link" href="<%= gene_genes_path %>"><span class="mr-2 fas fa-dna" role="img" aria-label="dna"></span>Genes</a></li>
+              <li class="nav-item"><a class="nav-link" href="<%= guide_guides_path %>"><span class="mr-2 fas fa-bullseye" role="img" aria-label="dna"></span>Guides</a></li>
+              <% if mobile_device != "mobile" %>
+                    <li class="nav-item"><a class="nav-link" href="#!">|</a></li>
+                <% elsif mobile_device == "mobile" %>
+              <%end%>
+
+<!---------------------------------------FURTHER INFO-----------------------------------------> 
+              <li class="nav-item dropdown dropdown-on-hover"><a class="nav-link dropdown-toggle" id="navbarDropdownInfo" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Further info</a>
+                <div class="dropdown-menu dropdown-menu-card" aria-labelledby="navbarDropdownInfo">
+                  <div class="bg-white rounded-soft py-2">
+                  
+                  <%= link_to "Citrus and HLB", info_index_path(info: "hlb"), class:"dropdown-item fs-0" %>
+                  <%= link_to "Selection of Target Genes", info_index_path(info: "target-genes"), class:"dropdown-item fs-0" %>
+                  <%= link_to "CRISPR/Cas9 Gene Editing", info_index_path(info: "gene-editing"), class:"dropdown-item fs-0" %>
+                  <%= link_to "Vectors", info_index_path(info: "vectors"), class:"dropdown-item fs-0" %>
+                  <%= link_to "Creation of transgenic plants", info_index_path(info: "transgenic-plants"), class:"dropdown-item fs-0" %>
+                  </div>
+                </div>
+              </li>
+<!---------------------------------------SOCIETAL ACCEPTANCE-----------------------------------------> 
+              <li class="nav-item dropdown dropdown-on-hover"><a class="nav-link dropdown-toggle" id="navbarDropdownSocietal" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Societal acceptance</a>
+                <div class="dropdown-menu dropdown-menu-card" aria-labelledby="navbarDropdownSocietal">
+                  <div class="bg-white rounded-soft py-2">
+                  <%= link_to "Societal Acceptance of Gene-Editing", societal_acceptance_index_path(info: "acceptance"), class:"dropdown-item fs-0" %>
+                  </div>
+                </div>
+              </li>
+              <% if mobile_device == "mobile" %>
+               <div class="nav-item"><a class="btn btn-outline-citrus border-2x rounded-pill mb-2" href="<%= contact_form_path %>">Contact</a></div>
+              <%end%>
+              <li>
+              </li>
+            </ul>
+
+<!---------------------------------------SEARCH BOX-----------------------------------------> 
+            <ul class="navbar-nav ml-auto">
+              <div class="nav-item">
+                <%= form_tag(search_page_path, :method => "get", class: 'search-box') do %>  
+                  <form class="position-relative" data-toggle="search" data-display="static">
+                    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control search-input" %>  
+                    <span class="fas fa-search search-box-icon"></span>
+                  </div>
+                  </form>  
+                <% end %>
+              </div>
+<!---------------------------------------CONTACT-----------------------------------------> 
+              <% if mobile_device != "mobile" %>
+                <div class="nav-item"><a class="btn btn-outline-citrus border-2x rounded-pill ml-2" href="<%= contact_form_path %>">Contact</a></div>
+              <%end%>
+            </ul>
+          </div>
+        </nav>

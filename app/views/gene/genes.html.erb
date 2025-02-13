@@ -1,0 +1,69 @@
+<main class="main" id="top">
+  <div class="container-fluid" data-layout="container">
+    <%= render 'shared/infonavbar'%>
+    <div class="content">
+      <div class="card">
+        <div class="card-body overflow-hidden p-lg-6">
+          <div class="row align-items-center justify-content-between">
+            <h3><i>Citrus sinensis</i> genes targeted</h3>
+          </div>
+          <div>
+            <p class="lead">Additional information</p>
+
+          <!-- Fix table overflow in mobile -->
+          <div class="tableOverflow">
+            <table class="crisprtable table table-sm table-dashboard data-table no-wrap mb-0 fs--1 w-100" data-gene="gene">
+              <thead class="bg-table">
+                <tr>
+                  <th class="sort" style="width: 10%">Gene ID</th>
+                  <th class="sort">Description</th>
+                  <th class="sort" style="width: 8%">Chromosome</th>
+                  <th class="sort" style="width: 8%">Location</th>
+                  <th class="sort" style="width: 8%">Orthogroup</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white">
+              <% @gene_tables.each do |gene_table| %>
+                <tr>
+                  <td class="citrusfont"><%= link_to gene_table.Gene_ID, gene_table%></td>
+                  <td><%= gene_table.Description %></td>
+                  <td><%= gene_table.Chromosome %></td>
+                  <td><%= gene_table.Location %></td>
+                  <td><%= gene_table.Orthogroup %></td>
+                </tr>
+              <% end %>        
+              </tbody>
+              <tfoot class="bg-table">
+                <tr>
+                  <th>Gene ID</th>
+                  <th>Description</th>
+                  <th>Chromosome</th>
+                  <th>Location</th>
+                  <th>Orthogroup</th>
+                </tr>
+              </tfoot>
+            </table>
+            <% if mobile_device == "mobile" %>
+              <br>
+            <%end%>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.24/r-2.2.7/datatables.min.js"></script>
+
+  <script type="text/javascript">
+    setTimeout(function(){
+      $('.crisprtable').DataTable({
+        rowReorder: {
+          selector: 'td:nth-child(2)'
+      },
+      responsive: true 
+    });
+      }, 500);
+  </script>
+</main>

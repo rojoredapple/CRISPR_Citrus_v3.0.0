@@ -1,0 +1,56 @@
+2025-02-03 03:22:58.387 -03 [88281] LOG:  starting PostgreSQL 17.2 (Postgres.app) on aarch64-apple-darwin23.6.0, compiled by Apple clang version 15.0.0 (clang-1500.3.9.4), 64-bit
+2025-02-03 03:22:58.389 -03 [88281] LOG:  listening on IPv6 address "::1", port 5434
+2025-02-03 03:22:58.389 -03 [88281] LOG:  listening on IPv4 address "127.0.0.1", port 5434
+2025-02-03 03:22:58.389 -03 [88281] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5434"
+2025-02-03 03:22:58.391 -03 [88284] LOG:  database system was shut down at 2025-02-03 03:22:58 -03
+2025-02-03 03:22:58.392 -03 [88281] LOG:  database system is ready to accept connections
+2025-02-03 03:23:21.194 PostgresPermissionDialog[88449:31689813] +[IMKClient subclass]: chose IMKClient_Modern
+2025-02-03 03:23:21.194 PostgresPermissionDialog[88449:31689813] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+2025-02-03 03:27:58.390 -03 [88282] LOG:  checkpoint starting: time
+2025-02-03 03:32:28.119 -03 [88282] LOG:  checkpoint complete: wrote 2935 buffers (17.9%); 0 WAL file(s) added, 0 removed, 1 recycled; write=269.696 s, sync=0.031 s, total=269.730 s; sync files=1075, longest=0.001 s, average=0.001 s; distance=13962 kB, estimate=13962 kB; lsn=0/22AC1C0, redo lsn=0/22AA4D0
+2025-02-03 13:16:27.229 -03 [88281] LOG:  received smart shutdown request
+2025-02-03 13:16:27.231 -03 [88281] LOG:  background worker "logical replication launcher" (PID 88287) exited with exit code 1
+2025-02-03 13:16:27.231 -03 [88282] LOG:  shutting down
+2025-02-03 13:16:27.232 -03 [88282] LOG:  checkpoint starting: shutdown immediate
+2025-02-03 13:16:27.237 -03 [88282] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.006 s; sync files=0, longest=0.000 s, average=0.000 s; distance=7 kB, estimate=12566 kB; lsn=0/22AC270, redo lsn=0/22AC270
+2025-02-03 13:16:27.247 -03 [88281] LOG:  database system is shut down
+2025-02-03 13:18:11.313 -03 [2695] LOG:  starting PostgreSQL 17.2 (Postgres.app) on aarch64-apple-darwin23.6.0, compiled by Apple clang version 15.0.0 (clang-1500.3.9.4), 64-bit
+2025-02-03 13:18:11.331 -03 [2695] LOG:  listening on IPv6 address "::1", port 5434
+2025-02-03 13:18:11.331 -03 [2695] LOG:  listening on IPv4 address "127.0.0.1", port 5434
+2025-02-03 13:18:11.331 -03 [2695] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5434"
+2025-02-03 13:18:11.339 -03 [2698] LOG:  database system was shut down at 2025-02-03 13:16:27 -03
+2025-02-03 13:18:11.365 -03 [2695] LOG:  database system is ready to accept connections
+2025-02-03 13:18:15.602 -03 [2695] LOG:  received fast shutdown request
+2025-02-03 13:18:15.602 -03 [2695] LOG:  aborting any active transactions
+2025-02-03 13:18:15.603 -03 [2695] LOG:  background worker "logical replication launcher" (PID 2703) exited with exit code 1
+2025-02-03 13:18:15.604 -03 [2696] LOG:  shutting down
+2025-02-03 13:18:15.604 -03 [2696] LOG:  checkpoint starting: shutdown immediate
+2025-02-03 13:18:15.605 -03 [2696] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/22AC2E8, redo lsn=0/22AC2E8
+2025-02-03 13:18:15.638 -03 [2695] LOG:  database system is shut down
+2025-02-03 16:54:33.786 -03 [71451] LOG:  starting PostgreSQL 17.2 (Postgres.app) on aarch64-apple-darwin23.6.0, compiled by Apple clang version 15.0.0 (clang-1500.3.9.4), 64-bit
+2025-02-03 16:54:33.787 -03 [71451] LOG:  listening on IPv6 address "::1", port 5434
+2025-02-03 16:54:33.787 -03 [71451] LOG:  listening on IPv4 address "127.0.0.1", port 5434
+2025-02-03 16:54:33.788 -03 [71451] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5434"
+2025-02-03 16:54:33.793 -03 [71454] LOG:  database system was shut down at 2025-02-03 13:18:15 -03
+2025-02-03 16:54:33.796 -03 [71451] LOG:  database system is ready to accept connections
+2025-02-03 16:59:33.799 -03 [71452] LOG:  checkpoint starting: time
+2025-02-03 16:59:33.807 -03 [71452] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.009 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/22AC3F0, redo lsn=0/22AC398
+2025-02-03 22:03:37.504 -03 [71451] LOG:  received fast shutdown request
+2025-02-03 22:03:37.505 -03 [71451] LOG:  aborting any active transactions
+2025-02-03 22:03:37.507 -03 [71451] LOG:  background worker "logical replication launcher" (PID 71457) exited with exit code 1
+2025-02-03 22:03:37.507 -03 [71452] LOG:  shutting down
+2025-02-03 22:03:37.508 -03 [71452] LOG:  checkpoint starting: shutdown immediate
+2025-02-03 22:03:37.510 -03 [71452] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.003 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/22AC4A0, redo lsn=0/22AC4A0
+2025-02-03 22:03:37.512 -03 [71451] LOG:  database system is shut down
+2025-02-13 12:11:34.981 -03 [38981] LOG:  starting PostgreSQL 17.2 (Postgres.app) on aarch64-apple-darwin23.6.0, compiled by Apple clang version 15.0.0 (clang-1500.3.9.4), 64-bit
+2025-02-13 12:11:34.983 -03 [38981] LOG:  listening on IPv6 address "::1", port 5434
+2025-02-13 12:11:34.983 -03 [38981] LOG:  listening on IPv4 address "127.0.0.1", port 5434
+2025-02-13 12:11:34.983 -03 [38981] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5434"
+2025-02-13 12:11:34.990 -03 [38984] LOG:  database system was shut down at 2025-02-03 22:03:37 -03
+2025-02-13 12:11:34.995 -03 [38981] LOG:  database system is ready to accept connections
+2025-02-13 12:16:34.984 -03 [38982] LOG:  checkpoint starting: time
+2025-02-13 12:16:34.992 -03 [38982] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.009 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/22AC5A8, redo lsn=0/22AC550
+2025-02-13 15:25:55.224 -03 [80698] ERROR:  database "citrus_development" already exists
+2025-02-13 15:25:55.224 -03 [80698] STATEMENT:  CREATE DATABASE "citrus_development" ENCODING = 'unicode'
+2025-02-13 15:25:55.261 -03 [80700] ERROR:  database "citrus_test" already exists
+2025-02-13 15:25:55.261 -03 [80700] STATEMENT:  CREATE DATABASE "citrus_test" ENCODING = 'unicode'

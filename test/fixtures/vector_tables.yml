@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Vector_ID: MyString
+  Backbone: MyString
+  tRNA_array: MyString
+  U6_vector: MyString
+  Short_note: MyString
+  Vector_link: MyString
+  Cloned: MyString
+  Cloned_by: MyString
+  Box_1_Ago_EHA105: MyString
+  Transformed_valencia: MyString
+  Transformed_carrizo: MyString
+  GFP_positives: MyString
+
+two:
+  Vector_ID: MyString
+  Backbone: MyString
+  tRNA_array: MyString
+  U6_vector: MyString
+  Short_note: MyString
+  Vector_link: MyString
+  Cloned: MyString
+  Cloned_by: MyString
+  Box_1_Ago_EHA105: MyString
+  Transformed_valencia: MyString
+  Transformed_carrizo: MyString
+  GFP_positives: MyString

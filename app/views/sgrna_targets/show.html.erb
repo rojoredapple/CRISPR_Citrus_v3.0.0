@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sgrna id:</strong>
+  <%= @sgrna_target.sgRNA_ID %>
+</p>
+
+<p>
+  <strong>Gene id:</strong>
+  <%= @sgrna_target.Gene_ID %>
+</p>
+
+<p>
+  <strong>Bp diff:</strong>
+  <%= @sgrna_target.bp_diff %>
+</p>
+
+<p>
+  <strong>Pprox:</strong>
+  <%= @sgrna_target.pprox %>
+</p>
+
+<p>
+  <strong>Pam:</strong>
+  <%= @sgrna_target.PAM %>
+</p>
+
+<p>
+  <strong>Gene direction:</strong>
+  <%= @sgrna_target.gene_direction %>
+</p>
+
+<p>
+  <strong>Gene cutsite:</strong>
+  <%= @sgrna_target.gene_cutsite %>
+</p>
+
+<p>
+  <strong>Genome direction:</strong>
+  <%= @sgrna_target.genome_direction %>
+</p>
+
+<p>
+  <strong>Genomestart:</strong>
+  <%= @sgrna_target.genomeStart %>
+</p>
+
+<p>
+  <strong>Genomeend:</strong>
+  <%= @sgrna_target.genomeEnd %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @sgrna_target.target %>
+</p>
+
+<%= link_to 'Edit', edit_sgrna_target_path(@sgrna_target) %> |
+<%= link_to 'Back', sgrna_targets_path %>

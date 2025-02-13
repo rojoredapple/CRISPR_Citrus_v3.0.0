@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Plant_ID: MyString
+  Species: MyString
+  Vector: MyString
+  Link: MyString
+  Genotyping_summary: MyString
+  Short_note: MyString
+  Live: MyString
+  Phenotyping_text: MyString
+  Phenotyping_image: MyString
+  extra_field: MyString
+  additional_field: MyString
+
+two:
+  Plant_ID: MyString
+  Species: MyString
+  Vector: MyString
+  Link: MyString
+  Genotyping_summary: MyString
+  Short_note: MyString
+  Live: MyString
+  Phenotyping_text: MyString
+  Phenotyping_image: MyString
+  extra_field: MyString
+  additional_field: MyString

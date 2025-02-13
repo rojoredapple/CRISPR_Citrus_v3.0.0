@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gene id:</strong>
+  <%= @gp_note.Gene_ID %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @gp_note.Note %>
+</p>
+
+<%= link_to 'Edit', edit_gp_note_path(@gp_note) %> |
+<%= link_to 'Back', gp_notes_path %>

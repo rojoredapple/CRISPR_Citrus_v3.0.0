@@ -1,0 +1,2 @@
+class ArrayTable < ApplicationRecord
+end

@@ -1,0 +1,193 @@
+<div class="content">
+  <div class="card mb-3">
+
+  <!---NAVBAR----->
+  <%= render 'shared/infonavbar' %>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-8">
+          <h3 class="mb-0">Contact US!</h3>
+          <div class="bg-white">
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="card mb-3">
+  <div class="card-header">
+    <h5 class="mb-0">Email</h5>
+  </div>
+<div class="card-body bg-light">
+<div class="row">
+<div class="col-12">
+
+<!------------------------MAIL FORM------------------------------>
+<form id="adj_javascript_form">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input class="form-control" id="name" type="text" placeholder="Name" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="email1">Contact Email</label>
+    <input class="form-control" id="email" type="email" placeholder="Email" name="email">
+  </div>
+
+  <div class="form-group">
+    <label for="affiliation">Affiliation</label>
+    <input class="form-control" id="affiliation" type="affiliation" placeholder="Affiliation" name="affiliation">
+  </div>
+
+  <div class="form-group form-check">
+    <p>Reason for contact</p>
+    <div class="custom-control custom-radio custom-control-inline">
+      <input class="form-check-input" id="inquiry" type="radio" name="exampleRadios" value="option2">
+      <label class="form-check-label" for="inquiry">General inquiry</label>
+    </div>
+
+    <div class="custom-control custom-radio custom-control-inline">
+      <input class="form-check-input" id="materials" type="radio" name="exampleRadios" value="option2">
+      <label class="form-check-label" for="materials">Request for plants</label>
+    </div>
+
+    <div class="custom-control custom-radio custom-control-inline">
+    <input class="form-check-input" id="collaborate" type="radio" name="exampleRadios" value="option2">
+    <label class="form-check-label" for="collaborate">Suggest candidate genes and/or collaborate</label>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+</div>
+
+  <div class="card-body p-0">
+  <!------------------------Text Area------------------------------>
+    <form id="javascript_form">
+      <textarea class="form-control" style="height: 300px" name="text"> 
+        <% if params[:plantid]%>
+        <%="Hello, I am interested in purchasing the product with Plant ID: " + params[:plantid]%>
+        <%end%>
+        <%="Please, contact me."%>
+      </textarea>
+    </form>
+  </div>
+  
+  <div class="card-footer border-top border-200 d-flex justify-content-between align-items-center">
+    <!-------SEND BUTTON--------->
+    <div class="d-flex align-items-center">
+      <button class="g-recaptcha btn btn-primary btn-sm px-5 mr-2" type="submit" id="js_send" data-sitekey="6LdKoHsaAAAAAJ9GkVL31p8VuOHFMdQS-4SwkSX9" data-callback='onSubmit' data-action='submit'>Send</button>
+    </div>
+
+    <!-------DELETE BUTTON--------->
+    <div class="d-flex align-items-center">
+      <button class="btn btn-light btn-sm" type="button" data-toggle="tooltip" data-placement="top" title="Delete"> <span class="fas fa-trash"></span></button>
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+
+
+<%# Passed parameter ID from plant_tables/show %>
+<%#= "This is the plant passed " + params[:plantid] rescue nil  %> 
+<!-------------CAPTCHA---------->
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+ <script>
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+ </script>
+
+  <!--------JS SEND METHOD---------->
+  <script>
+    //update this with your js_form selector
+    var form_id_js = "javascript_form";
+    var adj_form_id_js = "adj_javascript_form";
+
+    var data_js = {
+        // manuel@eastrocksoftware.com - "access_token": "ofnra6mx7ab99u6c96g5t3ah"
+        // citrus@yale.edu             - "access_token":"bwnbbg4opncyy1od05ym6t12"
+        "access_token": "bwnbbg4opncyy1od05ym6t12"
+    };
+
+    function js_onSuccess() {
+        // remove this to avoid redirect
+        alert("Message sent successfully!")
+        window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
+    }
+
+    function js_onError(error) {
+        // remove this to avoid redirect
+        window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
+    }
+
+    var sendButton = document.getElementById("js_send");
+
+    function js_send() {
+        sendButton.value='Sending…';
+        sendButton.disabled=true;
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+            if (request.readyState == 4 && request.status == 200) {
+                js_onSuccess();
+            } else
+            if(request.readyState == 4) {
+                js_onError(request.response);
+            }
+        };
+
+        //var subject = document.querySelector("#" + form_id_js + " [name='subject']").value;
+        var subject = "CRISPR Citrus Notification"
+        var message = "Name: " + document.querySelector("#" + adj_form_id_js + " [name='name']").value + "\nEmail: " + document.querySelector("#" + adj_form_id_js + " [name='email']").value + "\nAffiliation: " + document.querySelector("#" + adj_form_id_js + " [name='affiliation']").value + "\n\n" + document.querySelector("#" + form_id_js + " [name='text']").value
+        //var message = document.querySelector("#tinymce > p").value;
+        data_js['subject'] = subject;
+        data_js['text'] = message
+        var params = toParams(data_js);
+
+        request.open("POST", "https://postmail.invotes.com/send", true);
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        request.send(params);
+
+        return false;
+    }
+
+  function check() {
+      if (document.querySelector("#adj_javascript_form [name='name']").value !== "" && document.querySelector("#adj_javascript_form [name='email']").value !== "" && document.querySelector("#adj_javascript_form [name='affiliation']").value !== ""){
+        js_send()
+    } else {
+
+      //alert("Please fill out every field (Name, Contact Email & Affiliation) before sending the message.")
+      arr = ["name", "email", "affiliation"]
+
+      if (document.querySelector("#adj_javascript_form [name='name']").value == ""){
+        document.querySelector("#adj_javascript_form [name='name']").setAttribute("style", "background-color: #f8d7da; border-color: #f5c6cb")
+        }
+      if (document.querySelector("#adj_javascript_form [name='email']").value == ""){
+        document.querySelector("#adj_javascript_form [name='email']").setAttribute("style", "background-color: #f8d7da; border-color: #f5c6cb")
+        }
+      if (document.querySelector("#adj_javascript_form [name='affiliation']").value == ""){
+        document.querySelector("#adj_javascript_form [name='affiliation']").setAttribute("style", "background-color: #f8d7da; border-color: #f5c6cb")
+        }
+      }
+    }
+    //sendButton.onclick = js_send;
+    sendButton.onclick = check;
+    
+  function toParams(data_js) {
+    var form_data = [];
+    for ( var key in data_js ) {
+        form_data.push(encodeURIComponent(key) + "=" + encodeURIComponent(data_js[key]));
+    }
+
+    return form_data.join("&");
+    }
+
+    var js_form = document.getElementById(form_id_js);
+    js_form.addEventListener("submit", function (e) {
+        e.preventDefault();
+    });
+
+</script>
+    

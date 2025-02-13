@@ -1,0 +1,2 @@
+class GeneTable < ApplicationRecord
+end

@@ -1,0 +1,10 @@
+Gene_ID,Description,Chromosome,Location,Orthogroup,Link,HZAU_link,Sequence_link,Diagram_link,Live
+Cs6g22150,Hydroquinone glucosyltransferase; Cinnamate beta-D-glucosyltransferase,Chromosome,Location,OG0000082,,model.svg,,,TRUE
+Cs3g08430,UDP-glycosyltransferase 83A1; Cinnamate beta-D-glucosyltransferase,Chromosome,Location,OG0000082,,model2.svg,,,TRUE
+Cs9g17330,Tubulin beta-1 chain,Chromosome,Location,OG0000087,,nomodel.svg,,,TRUE
+Cs2g09970,Tubulin beta-5 chain,Chromosome,Location,OG0000087,,model.svg,,,TRUE
+Cs6g07480,Tubulin beta-2/beta-3 chain,Chromosome,Location,OG0000087,,model.svg,,,FALSE
+CsCsin87,Tubulin beta-2/beta-3 chain,Chromosome,Location,OG0000087,,model.svg,,,TRUE
+Csathal87,Tubulin beta-2/beta-3 chain,Chromosome,Location,OG0000087,,model.svg,,,TRUE
+CsCsin82,Tubulin beta-2/beta-3 chain,Chromosome,Location,OG0000082,,model.svg,,,TRUE
+Csathal82,Tubulin beta-2/beta-3 chain,Chromosome,Location,OG0000082,,model.svg,,,TRUE

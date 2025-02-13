@@ -1,0 +1,2 @@
+class GeneAthal < ApplicationRecord
+end

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gp Notes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Gene id</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gp_notes.each do |gp_note| %>
+      <tr>
+        <td><%= gp_note.Gene_ID %></td>
+        <td><%= gp_note.Note %></td>
+        <td><%= link_to 'Show', gp_note %></td>
+        <td><%= link_to 'Edit', edit_gp_note_path(gp_note) %></td>
+        <td><%= link_to 'Destroy', gp_note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gp Note', new_gp_note_path %>

@@ -1,0 +1,72 @@
+<%= form_with(model: sgrna_target) do |form| %>
+  <% if sgrna_target.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sgrna_target.errors.count, "error") %> prohibited this sgrna_target from being saved:</h2>
+
+      <ul>
+        <% sgrna_target.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :sgRNA_ID %>
+    <%= form.text_field :sgRNA_ID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Gene_ID %>
+    <%= form.text_field :Gene_ID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bp_diff %>
+    <%= form.text_field :bp_diff %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pprox %>
+    <%= form.text_field :pprox %>
+  </div>
+
+  <div class="field">
+    <%= form.label :PAM %>
+    <%= form.text_field :PAM %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gene_direction %>
+    <%= form.text_field :gene_direction %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gene_cutsite %>
+    <%= form.text_field :gene_cutsite %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genome_direction %>
+    <%= form.text_field :genome_direction %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genomeStart %>
+    <%= form.text_field :genomeStart %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genomeEnd %>
+    <%= form.text_field :genomeEnd %>
+  </div>
+
+  <div class="field">
+    <%= form.label :target %>
+    <%= form.text_field :target %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

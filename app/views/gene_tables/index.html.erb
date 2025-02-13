@@ -1,0 +1,48 @@
+<!--
+<p id="notice"><%= notice %></p>
+
+<h1>Gene Tables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Gene id</th>
+      <th>Description</th>
+      <th>Chromosome</th>
+      <th>Location</th>
+      <th>Orthogroup</th>
+      <th>Link</th>
+      <th>Hzau link</th>
+      <th>Sequence link</th>
+      <th>Diagram link</th>
+      <th>Live</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gene_tables.each do |gene_table| %>
+      <tr>
+        <td><%= gene_table.Gene_ID %></td>
+        <td><%= gene_table.Description %></td>
+        <td><%= gene_table.Chromosome %></td>
+        <td><%= gene_table.Location %></td>
+        <td><%= gene_table.Orthogroup %></td>
+        <td><%= gene_table.Link %></td>
+        <td><%= gene_table.HZAU_link %></td>
+        <td><%= gene_table.Sequence_link %></td>
+        <td><%= gene_table.Diagram_link %></td>
+        <td><%= gene_table.Live %></td>
+        <td><%#= link_to 'Show', gene_table %></td>
+        <td><%#= link_to 'Edit', edit_gene_table_path(gene_table) %></td>
+        <td><%#= link_to 'Destroy', gene_table, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%#= link_to 'New Gene Table', new_gene_table_path %>
+
+-->

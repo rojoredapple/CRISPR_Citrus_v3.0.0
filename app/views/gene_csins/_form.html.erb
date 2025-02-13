@@ -1,0 +1,27 @@
+<%= form_with(model: gene_csin) do |form| %>
+  <% if gene_csin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gene_csin.errors.count, "error") %> prohibited this gene_csin from being saved:</h2>
+
+      <ul>
+        <% gene_csin.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Gene_ID %>
+    <%= form.text_field :Gene_ID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Orthogroup_genes_Csin %>
+    <%= form.text_field :Orthogroup_genes_Csin %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

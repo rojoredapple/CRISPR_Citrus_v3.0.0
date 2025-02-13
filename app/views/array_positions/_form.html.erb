@@ -1,0 +1,32 @@
+<%= form_with(model: array_position) do |form| %>
+  <% if array_position.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(array_position.errors.count, "error") %> prohibited this array_position from being saved:</h2>
+
+      <ul>
+        <% array_position.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Array_ID %>
+    <%= form.text_field :Array_ID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sgRNA_ID %>
+    <%= form.text_field :sgRNA_ID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tRNA_position %>
+    <%= form.text_field :tRNA_position %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

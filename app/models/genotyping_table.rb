@@ -1,0 +1,2 @@
+class GenotypingTable < ApplicationRecord
+end

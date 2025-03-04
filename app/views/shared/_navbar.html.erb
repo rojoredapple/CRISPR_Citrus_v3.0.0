@@ -5,8 +5,8 @@
           <% elsif mobile_device == "mobile" %>
           <nav class="navbar navbar-standard navbar-expand-lg fixed-top navbar-dark navbar-theme-mobile" style="background-color: rgba(11, 23, 39, 0.5);">
         <%end%>
-        <div class="container"><%= link_to "CRISPR Citrus", root_path, class: "navbar-brand text-white" %>
-          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarStandard" aria-controls="navbarStandard" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><%= link_to "CRISPR Citrus", root_path, class: "navbar-brand text-black" %>
+          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-target="#navbarStandard" aria-controls="navbarStandard" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse scrollbar perfect-scrollbar" id="navbarStandard">
             <ul class="navbar-nav">
 
@@ -20,9 +20,9 @@
               <li class="nav-item"><a class="nav-link" href="#!">|</a></li>
               <% elsif mobile_device == "mobile" %>
             <%end%>
-              <li class="nav-item dropdown dropdown-on-hover"><a class="nav-link dropdown-toggle" id="navbarDropdownInfo" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Further info</a>
+              <li class="nav-item dropdown dropdown-on-hover"><a class="nav-link dropdown-toggle" id="navbarDropdownInfo" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Further info</a>
                 <div class="dropdown-menu dropdown-menu-card" aria-labelledby="navbarDropdownInfo">
-                  <div class="bg-white rounded-soft py-2">
+                  <div class="bg-black rounded-soft py-2">
                   <%= link_to "Citrus and HLB", info_index_path(info: "hlb"), class:"dropdown-item fs-0" %>
                   <%= link_to "Selection of Target Genes", info_index_path(info: "target-genes"), class:"dropdown-item fs-0" %>
                   <%= link_to "CRISPR/Cas9 Gene Editing", info_index_path(info: "gene-editing"), class:"dropdown-item fs-0" %>
@@ -32,9 +32,9 @@
                 </div>
               </li>
 
-              <li class="nav-item dropdown dropdown-on-hover"><a class="nav-link dropdown-toggle" id="navbarDropdownSocietal" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Societal acceptance</a>
+              <li class="nav-item dropdown dropdown-on-hover"><a class="nav-link dropdown-toggle" id="navbarDropdownSocietal" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Societal acceptance</a>
                 <div class="dropdown-menu dropdown-menu-card" aria-labelledby="navbarDropdownSocietal">
-                  <div class="bg-white rounded-soft py-2">
+                  <div class="bg-black rounded-soft py-2">
                   <%= link_to "Societal Acceptance of Gene-Editing", societal_acceptance_index_path(info: "acceptance"), class:"dropdown-item fs-0" %>
                   </div>
                 </div>

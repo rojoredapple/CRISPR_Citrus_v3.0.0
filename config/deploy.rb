@@ -16,7 +16,7 @@ set :rbenv_roles, :all # default value
 lock "~> 3.16.0"
 
 set :application, "CRISPRCitrus"
-set :repo_url, "git@github.com:G-Thomson/CRISPRCitrus_falcon-v2.8.0.git"
+set :repo_url, "git@github.com:rojoredapple/CRISPR_Citrus_v3.0.0.git"
 set :tmp_dir, "/home/ers/tmp"
 set :default_shell, "/bin/bash -l"
 

@@ -18,6 +18,7 @@ gem 'capistrano-rbenv'
 gem 'capistrano-db-tasks', require: false
 
 gem 'bootstrap', '~> 5.3.3'
+gem "dartsass-rails"
 gem 'dartsass-sprockets'
 gem 'sprockets-rails'
 gem 'jquery-rails'
@@ -27,7 +28,6 @@ gem 'puma', '~> 6.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -53,16 +53,18 @@ group :development do
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem 'rack-mini-profiler', '~> 2.0'
+  # gem 'rack-mini-profiler', '~> 3.3.1'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '4.10'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
+  gem 'webdrivers', '5.3.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "webpacker", "~> 5.4"

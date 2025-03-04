@@ -10,9 +10,14 @@ import "channels"
 
 
 //import BOOTSTRAP SCSS & JS
-import 'bootstrap'
+import "bootstrap"
+import "stylesheets/application"
 import "../css/site"
 import '@popperjs/core'
+import '@hotwired/turbo-rails';
+import './controllers';
+import "bootstrap/dist/js/bootstrap"
+import "bootstrap/dist/css/bootstrap"
 
 //Theme static JS & CSS import
 document.addEventListener("turbolinks:load", require("../js/theme"));

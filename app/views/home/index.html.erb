@@ -1,7 +1,7 @@
 <main class="main" id="top">
 
   <!--- NAVBAR------->
-  <%= render 'shared/navbar'%>
+  <%= render 'shared/infonavbar'%>
 
   <!----- BACKGROUND HOLDER ------>
   <section class="py-0 overflow-hidden" id="banner">
@@ -11,8 +11,8 @@
     <div class="container">
       <div class="row justify-content-center align-items-center pt-8 pt-lg-10 pb-lg-9 pb-xl-0">
         <div class="col-md-11 col-lg-8 col-xl-4 pb-7 pb-xl-9 text-center text-xl-left">
-          <h1 class="text-white font-weight-heavy">Combating HLB <br /> with gene editing</h1>
-          <p class="lead text-white">Identification of HLB Susceptibility Genes in a Citrus Population Generated using Multiplexed CRISPR/Cas9 Gene Editing</p>
+          <h1 class="text-black font-weight-heavy">Combating HLB <br /> with gene editing</h1>
+          <p class="lead text-black">Identification of HLB Susceptibility Genes in a Citrus Population Generated using Multiplexed CRISPR/Cas9 Gene Editing</p>
         </div>
         <div class="col-md-11 col-lg-8 col-xl-4 pb-7 pb-xl-9 filter-logo">
           <%= image_tag "landing/logo2.svg", class: "p-logo", alt: ""%>
@@ -26,7 +26,7 @@
       <div class="row justify-content-center align-items-center">
 
       <%= form_tag(search_page_path, :method => "get", class: 'search-box') do %>
-        <form class="position-relative" data-toggle="search" data-display="static">
+        <form class="position-relative" data-bs-toggle="search" data-display="static">
           <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control search-input" %>
           <span class="fas fa-search search-box-icon"></span>
         </div>
@@ -93,12 +93,7 @@
         <% elsif mobile_device = "mobile" %>
         <iframe frameborder="0" src="https://www.youtube.com/embed/05Bxegh-0M8" width="320" height="180" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <%end%>
-        <br/>
-              <%= link_to "Citrus and HLB", info_index_path(info: "hlb"), class:"videolink fs-1"%> <span class="lead fs-0">|</span>
-              <%= link_to "Selection of Target Genes", info_index_path(info: "target-genes"), class:"videolink fs-1" %> <span class="lead fs-0">|</span>
-              <%= link_to "CRISPR/Cas9 Gene Editing", info_index_path(info: "gene-editing"), class:"videolink fs-1" %> <span class="lead fs-0">|</span>
-              <%= link_to "Vectors", info_index_path(info: "vectors"), class:"videolink fs-1" %> <span class="lead fs-0">|</span>
-              <%= link_to "Creation of transgenic plants", info_index_path(info: "transgenic-plants"), class:"videolink fs-1" %>
+        <br>
       </div>
     </div>
   </section>
@@ -154,7 +149,7 @@
           <div class="col-sm-4">
             <div class="service-block mb-3 mb-lg-0">
               <a href="https://fred.ifas.ufl.edu/faculty/house/">
-                <%= image_tag "logos/UF.png", alt:"", class:"yaleuf" %>
+                <%= image_tag "logos/UF.png", alt:"", class:"thumbnail", style: 'height:10vw;width:10vw;margin-bottom:20px;' %>
                 <h4 class="mb-3 mt-4">Lisa House and Bachir Kassas</h4>
               </a>
               <p class="mb-2 fs-0">Food and Resource Economics Department</p>
@@ -235,7 +230,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-3 mr-5">
-          <%= image_tag "logos/yalelogo.png", alt:"", class:"logo-border-test", style:"height: 140px;" %>
+          <%= image_tag "logos/yalelogo.png", alt:"", class:"logo-border-test", style:"height: 120px;" %>
         </div>
 
         <div class="col">
@@ -248,7 +243,7 @@
                 <li>
                 <span class="d-flex inline-block mt-3">
                   <a class="btn btn-outline-light border-2x rounded-pill" href="<%= contact_form_path %>">Contact</a>
-                  <a class="icon-item bg-white text-twitter ml-2 " href="https://twitter.com/vivian_irish?lang=en" target="_blank"><span class="fab fa-twitter"></span></a>
+                  <a class="icon-item bg-black text-twitter ml-2 " href="https://twitter.com/vivian_irish?lang=en" target="_blank"><span class="fab fa-twitter"></span></a>
                 </span>
                 </li>
               </ul>
@@ -258,23 +253,23 @@
               <!--<p class="text-600 opacity-50">CRISPR Citrus </p>-->
               <ul class="list-unstyled">
                 <li>
-                  <h5 class="fs-1 mb-1"><%= link_to "Irish Lab", "https://irishlab.yale.edu/", class: "text-600",target: :_blank%></h5>
-                  <h5 class="fs-1 mb-1"><%= link_to "Jacob Lab", "https://jacob-lab.yale.edu/", class: "text-600",target: :_blank%></h5>
+                  <h5 class="fs-2 mb-1"><%= link_to "Irish Lab", "https://irishlab.yale.edu/", class: "text-600",target: :_blank%></h5>
+                  <h5 class="fs-2 mb-1"><%= link_to "Jacob Lab", "https://jacob-lab.yale.edu/", class: "text-600",target: :_blank%></h5>
                 </li>
               </ul>
               <h5 class="text-uppercase text-white opacity-85 mt-2 mb-2">University of Florida</h5>
               <!--<p class="text-600 opacity-50">CRISPR Citrus </p>-->
               <ul class="list-unstyled">
                 <li>
-                  <h5 class="fs-1 mb-1"><%= link_to "Lisa House", "https://fred.ifas.ufl.edu/about/directory/lisa-house/", class: "text-600", target: :_blank%></h5>
-                  <h5 class="fs-1 mb-1"><%= link_to "Bachir Kassas", "https://fred.ifas.ufl.edu/about/directory/bachir-kassas/", class: "text-600", target: :_blank%></h5>
+                  <h5 class="fs-2 mb-1"><%= link_to "Lisa House", "https://fred.ifas.ufl.edu/about/directory/lisa-house/", class: "text-600", target: :_blank%></h5>
+                  <h5 class="fs-2 mb-1"><%= link_to "Bachir Kassas", "https://fred.ifas.ufl.edu/about/directory/bachir-kassas/", class: "text-600", target: :_blank%></h5>
                 </li>
               </ul>
             </div>
 
           </div>
         </div>
-        <%= image_tag "logos/USDA.png", alt:"", class:"", style:"height: 160px; background-color: white"%>
+        <%= image_tag "logos/USDA.png", alt:"", class:"", style:"width: 1000px; background-color: white"%>
       </div>
     </div>
   </section>
@@ -297,7 +292,7 @@
         <div class="list-unstyled ml-1 mt-4">
           <div class="d-flex flex-center mb-3">
           <a class="btn btn-outline-light border-2x rounded-pill" href="<%= contact_form_path %>">Contact</a>
-          <a class="icon-item bg-white text-twitter ml-3"href="https://twitter.com/vivian_irish?lang=en" target="_blank"><span class="fab fa-twitter"></span></a>
+          <a class="icon-item bg-black text-twitter ml-3"href="https://twitter.com/vivian_irish?lang=en" target="_blank"><span class="fab fa-twitter"></span></a>
           </div>
           <a class="text-600 fs-1 nav-item mb-1 mr-2" href="<%= plant_plants_path %>"><span class="mr-1 fas fa-leaf" role="img" aria-label="leaf"></span>Plants</a>
           <a class="text-600 fs-1 nav-item mb-1 mr-2" href="<%= gene_genes_path %>"><span class="mr-1 fas fa-dna" role="img" aria-label="dna"></span>Genes</a>
@@ -308,10 +303,10 @@
 
         <div class="d-flex flex-center mt-3">
         <ul class="list-unstyled">
-          <h5 class="text-uppercase text-white opacity-85 mt-2 mb-1">Yale MCDB Laboratories</h5>
+          <h5 class="text-uppercase text-black opacity-85 mt-2 mb-1">Yale MCDB Laboratories</h5>
           <li class="fs-1"><%= link_to "Irish Lab", "https://irishlab.yale.edu/", class: "text-600"%></li>
           <li class="fs-1"><%= link_to "Jacob Lab", "https://jacob-lab.yale.edu/", class: "text-600"%></li>
-          <h5 class="text-uppercase text-white opacity-85 mt-2 mb-1">University of Florida</h5>
+          <h5 class="text-uppercase text-black opacity-85 mt-2 mb-1">University of Florida</h5>
           <li class="fs-1"><%= link_to "Lisa House", "https://fred.ifas.ufl.edu/about/directory/lisa-house/", class: "text-600"%></li>
           <li class="fs-1"><%= link_to "Bachir Kassas", "https://fred.ifas.ufl.edu/about/directory/bachir-kassas/", class: "text-600"%></li>
         </ul>

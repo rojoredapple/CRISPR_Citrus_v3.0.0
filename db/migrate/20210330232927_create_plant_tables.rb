@@ -1,6 +1,6 @@
 class CreatePlantTables < ActiveRecord::Migration[6.1]
   def change
-    create_table :plant_tables do |t|
+    create_table :plant_tables, id: false, primary_key: :Plant_ID do |t|
       t.string :Plant_ID
       t.string :Species
       t.string :Vector

@@ -1,6 +1,6 @@
 class CreateGeneTables < ActiveRecord::Migration[6.1]
   def change
-    create_table :gene_tables do |t|
+    create_table :gene_tables, id: false, primary_key: :Gene_ID do |t|
       t.string :Gene_ID
       t.string :Description
       t.string :Chromosome

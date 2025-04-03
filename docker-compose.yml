@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: postgres:15
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: eastrockhike
+      POSTGRES_USER: eastrock
+      POSTGRES_DB: postgres
+
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -b '0.0.0.0'"
+    volumes:
+      - ".:/app"
+    ports:
+      - "5432:5432"
+    environment:
+      - DATABASE_URL=spinup-db002b2b.c9ukc6s0rmbg.us-east-1.rds.amazonaws.com
+
+volumes:
+  db_data:

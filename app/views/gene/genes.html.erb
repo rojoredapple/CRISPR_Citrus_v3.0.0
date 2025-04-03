@@ -25,11 +25,11 @@
               <tbody class="bg-white">
               <% @gene_tables.each do |gene_table| %>
                 <tr>
-                  <td class="citrusfont"><%= link_to gene_table.Gene_ID, gene_table%></td>
-                  <td><%= gene_table.Description %></td>
-                  <td><%= gene_table.Chromosome %></td>
-                  <td><%= gene_table.Location %></td>
-                  <td><%= gene_table.Orthogroup %></td>
+                  <%# <td class="citrusfont"><%= link_to gene_table.Gene_ID, gene_table%></td> %>
+                  <td><%= gene_table.description %></td>
+                  <td><%= gene_table.chromosome %></td>
+                  <td><%= gene_table.location %></td>
+                  <td><%= gene_table.orthogroup %></td>
                 </tr>
               <% end %>        
               </tbody>

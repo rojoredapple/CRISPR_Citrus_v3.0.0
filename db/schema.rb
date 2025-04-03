@@ -14,12 +14,24 @@ ActiveRecord::Schema[8.0].define(version: 2021_04_16_171136) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
+  create_table "array_position", primary_key: "array_id", id: { type: :string, limit: 255 }, force: :cascade do |t|
+    t.string "sgrna_id", limit: 255
+    t.integer "trna_position"
+  end
+
   create_table "array_positions", force: :cascade do |t|
     t.string "Array_ID"
     t.string "sgRNA_ID"
     t.string "tRNA_position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "array_table", primary_key: "array_id", id: { type: :string, limit: 255 }, force: :cascade do |t|
+    t.integer "length"
+    t.date "arrived"
+    t.string "supplier", limit: 255
+    t.string "batch", limit: 255
   end
 
   create_table "array_tables", force: :cascade do |t|
@@ -53,19 +65,37 @@ ActiveRecord::Schema[8.0].define(version: 2021_04_16_171136) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "gene_tables", force: :cascade do |t|
-    t.string "Gene_ID"
-    t.string "Description"
-    t.string "Chromosome"
-    t.string "Location"
-    t.string "Orthogroup"
-    t.string "Link"
-    t.string "HZAU_link"
-    t.string "Sequence_link"
-    t.string "Diagram_link"
-    t.string "Live"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "gene_table", primary_key: "gene_id", id: { type: :string, limit: 255 }, force: :cascade do |t|
+    t.string "description", limit: 65535
+    t.string "chromosome", limit: 255
+    t.integer "location"
+    t.string "orthogroup", limit: 255
+    t.string "link", limit: 255
+    t.string "hzau_link", limit: 255
+    t.string "sequence_link", limit: 255
+    t.string "diagram_link", limit: 255
+    t.boolean "live"
+  end
+
+  create_table "gene_tables", id: :integer, default: nil, force: :cascade do |t|
+    t.string "gene_id", limit: 255
+    t.string "description", limit: 65535
+    t.string "chromosome", limit: 255
+    t.integer "location"
+    t.string "orthogroup", limit: 255
+    t.string "link", limit: 255
+    t.string "hzau_link", limit: 255
+    t.string "sequence_link", limit: 255
+    t.string "diagram_link", limit: 255
+    t.boolean "live"
+  end
+
+  create_table "genotyping", primary_key: "plant_id", id: { type: :string, limit: 255 }, force: :cascade do |t|
+    t.string "gene_id", limit: 255
+    t.string "sgrna_id", limit: 255
+    t.string "genotyping_image", limit: 255
+    t.string "editing_efficiency", limit: 255
+    t.string "disruption_efficiency", limit: 255
   end
 
   create_table "genotyping_tables", force: :cascade do |t|
@@ -79,11 +109,28 @@ ActiveRecord::Schema[8.0].define(version: 2021_04_16_171136) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "gp_athal", primary_key: "gene_id", id: { type: :string, limit: 255 }, force: :cascade do |t|
+    t.string "orthogroup_genes_athal", limit: 255
+  end
+
+  create_table "gp_csin", primary_key: "gene_id", id: { type: :string, limit: 255 }, force: :cascade do |t|
+    t.string "orthogroup_genes_csin", limit: 255
+  end
+
   create_table "gp_notes", force: :cascade do |t|
     t.string "Gene_ID"
     t.string "Note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "gp_studies", primary_key: "gene_id", id: { type: :string, limit: 255 }, force: :cascade do |t|
+    t.string "study", limit: 65535
+  end
+
+  create_table "guide_table", primary_key: "sgrna_id", id: { type: :string, limit: 255 }, force: :cascade do |t|
+    t.string "sequence", limit: 255
+    t.string "orthologs_targeted", limit: 255
   end
 
   create_table "guide_tables", force: :cascade do |t|
@@ -99,6 +146,16 @@ ActiveRecord::Schema[8.0].define(version: 2021_04_16_171136) do
     t.string "Note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "plant_table", primary_key: "plant_id", id: { type: :string, limit: 255 }, force: :cascade do |t|
+    t.string "species", limit: 255
+    t.string "vector_id", limit: 255
+    t.date "date_to_soil"
+    t.string "genotyping_summary", limit: 255
+    t.string "short_note", limit: 255
+    t.string "link", limit: 255
+    t.boolean "live"
   end
 
   create_table "plant_tables", force: :cascade do |t|
@@ -124,6 +181,10 @@ ActiveRecord::Schema[8.0].define(version: 2021_04_16_171136) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "pp_notes", primary_key: "plant_id", id: { type: :string, limit: 255 }, force: :cascade do |t|
+    t.string "note", limit: 65535
+  end
+
   create_table "sgrna_targets", force: :cascade do |t|
     t.string "sgRNA_ID"
     t.string "Gene_ID"
@@ -140,12 +201,25 @@ ActiveRecord::Schema[8.0].define(version: 2021_04_16_171136) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "u6_table", primary_key: "vector_id", id: { type: :string, limit: 255 }, force: :cascade do |t|
+    t.string "sgrna_id", limit: 255
+    t.integer "position"
+  end
+
   create_table "u6_tables", force: :cascade do |t|
     t.string "Vector_ID"
     t.string "sgRNA_ID"
     t.string "Position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "vector_table", primary_key: "vector_id", id: { type: :string, limit: 255 }, force: :cascade do |t|
+    t.string "backbone", limit: 255
+    t.string "array_id", limit: 255
+    t.boolean "u6_vector"
+    t.string "short_note", limit: 255
+    t.string "link", limit: 255
   end
 
   create_table "vector_tables", force: :cascade do |t|
